@@ -12,96 +12,59 @@
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="dark">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">MH</div>
+            <div class="code-animation">
+                <span>Loading dependencies...</span>
+                <span>Compiling modules...</span>
+                <span>Starting dev server...</span>
+                <span class="comment">// Welcome!</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Custom Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
-    <!-- Animated Background Elements -->
-    <div class="grid-bg"></div>
-    
-    <!-- Glowing Orbs -->
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
-    <div class="glow-orb orb-3"></div>
-    
-    <!-- Moving Particles -->
-    <div class="particles-bg">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-    
-    <!-- Geometric Shapes -->
-    <div class="geometric-bg">
-        <div class="geo-shape geo-triangle"></div>
-        <div class="geo-shape geo-square"></div>
-        <div class="geo-shape geo-circle"></div>
-        <div class="geo-shape geo-hexagon"></div>
-    </div>
-    
-    <!-- Starfield Background -->
-    <div class="starfield">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
+    <!-- Animated Backgrounds Container -->
+    <div class="background-container">
+        <div class="grid-bg"></div>
+        <div class="particles-bg"></div>
+        <div class="starfield"></div>
     </div>
 
-    <!-- Programming Code Background -->
-    <div class="code-background" id="codeBackground"></div>
-
-    <!-- Matrix Binary Rain -->
-    <div class="matrix-bg" id="matrixBackground"></div>
-
-    <!-- Terminal Cursor -->
-    <div class="terminal-cursor" id="terminalCursor"></div>
-
-    <!-- Floating Language Menu -->
-    <div class="language-switcher">
-        <button class="lang-menu-toggle" title="سه زبانه | Trilingual | ثلاثي اللغات">
-            <span class="menu-icon">🌐</span>
-        </button>
-        <div class="lang-menu">
-            <button class="lang-btn active" data-lang="fa">🇮🇷</button>
-            <button class="lang-btn" data-lang="en">🇺🇸</button>
-            <button class="lang-btn" data-lang="ar">🇸🇦</button>
+    <!-- Desktop Language & Theme Switchers -->
+    <div class="desktop-controls">
+        <div class="language-switcher">
+            <button class="lang-menu-toggle" title="Trilingual | سه زبانه | ثلاثي اللغات">🌐</button>
+            <div class="lang-menu">
+                <button class="lang-btn active" data-lang="fa">🇮🇷</button>
+                <button class="lang-btn" data-lang="en">🇺🇸</button>
+                <button class="lang-btn" data-lang="ar">🇸🇦</button>
+            </div>
         </div>
-    </div>
-
-    <!-- Theme Switcher -->
-    <div class="theme-switcher">
-        <button class="theme-btn" id="themeToggle">
-            <span class="theme-icon">🌙</span>
-        </button>
+        <div class="theme-switcher">
+            <button class="theme-btn" id="themeToggleDesktop">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text" data-key="nav.logo">MH</span>
+                <a href="#hero" class="logo-text" data-key="nav.logo">MH</a>
             </div>
             <ul class="nav-menu">
-                <li><a href="#hero" class="nav-link" data-key="nav.home">خانه</a></li>
+                <li><a href="#hero" class="nav-link active" data-key="nav.home">خانه</a></li>
                 <li><a href="#about" class="nav-link" data-key="nav.about">درباره من</a></li>
                 <li><a href="#projects" class="nav-link" data-key="nav.projects">پروژه‌ها</a></li>
                 <li><a href="#experience" class="nav-link" data-key="nav.experience">تجربیات</a></li>
@@ -114,302 +77,244 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-avatar">
-                    <div class="avatar-circle">
-                        <div class="avatar-inner">
-                            <img src="assets/images/profile.jpg" alt="Mohammad Hassan Hashemi" class="profile-image">
-                            <span class="avatar-text">MH</span>
-                        </div>
+    
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-container container">
+                <div class="hero-content">
+                    <div class="hero-avatar">
+                        <img src="assets/images/profile.jpg" alt="Mohammad Hassan Hashemi" class="profile-image">
                     </div>
-                </div>
-                <h1 class="hero-name">
-                    <span class="typing-text" data-key="hero.name">محمد حسن هاشمی</span>
-                </h1>
-                <h2 class="hero-title">
-                    <span class="gradient-text" data-key="hero.title">مهندس ارشد فول‌استک</span>
-                </h2>
-                <p class="hero-description" data-key="hero.description">
-                    متخصص در React، Vue، Node.js، NestJS و NuxtJS
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary" data-key="hero.contact">
-                        <span>تماس با من</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/hassan-hashemi" target="_blank" rel="noopener" class="btn btn-secondary" data-key="hero.linkedin">
-                        <span>لینکدین</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-bg">
-                <div class="floating-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                    <div class="shape shape-4"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-key="about.title">درباره من</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p data-key="about.description">
-                        من یک مهندس نرم‌افزار با بیش از ۵ سال تجربه در توسعه وب هستم. تخصص من در ساخت اپلیکیشن‌های مدرن و قابل اعتماد با استفاده از جدیدترین تکنولوژی‌ها است.
+                    <h1 class="hero-name">
+                        <span class="typing-text" data-key="hero.name">محمد حسن هاشمی</span>
+                    </h1>
+                    <h2 class="hero-title">
+                        <span class="gradient-text" data-key="hero.title">مهندس ارشد فول‌استک</span>
+                    </h2>
+                    <p class="hero-description" data-key="hero.description">
+                        متخصص در React، Vue، Node.js، NestJS و NuxtJS
                     </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary" data-key="hero.contact">تماس با من</a>
+                        <a href="https://www.linkedin.com/in/hassan-hashemi" target="_blank" rel="noopener" class="btn btn-secondary" data-key="hero.linkedin">لینکدین</a>
+                    </div>
                 </div>
-                <div class="skills-container">
-                    <h3 class="skills-title" data-key="about.skills">مهارت‌های من</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">React</span>
-                                <span class="skill-percentage">95%</span>
+                <a href="#about" class="scroll-indicator">
+                    <div class="mouse"></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-key="about.title">درباره من</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p data-key="about.description">
+                            من یک مهندس نرم‌افزار با بیش از ۵ سال تجربه در توسعه وب هستم. تخصص من در ساخت اپلیکیشن‌های مدرن و قابل اعتماد با استفاده از جدیدترین تکنولوژی‌ها است.
+                        </p>
+                    </div>
+                    <div class="skills-container">
+                        <h3 class="skills-title" data-key="about.skills">مهارت‌های من</h3>
+                        <div class="skills-grid">
+                             <div class="skill-item">
+                                <span class="skill-name">React</span><span class="skill-percentage">95%</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--skill-width: 95%;"></div></div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="95"></div>
+                            <div class="skill-item">
+                                <span class="skill-name">Vue.js</span><span class="skill-percentage">90%</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--skill-width: 90%;"></div></div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Vue.js</span>
-                                <span class="skill-percentage">90%</span>
+                            <div class="skill-item">
+                                <span class="skill-name">Node.js</span><span class="skill-percentage">88%</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--skill-width: 88%;"></div></div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90"></div>
+                            <div class="skill-item">
+                                <span class="skill-name">NestJS</span><span class="skill-percentage">85%</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--skill-width: 85%;"></div></div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Node.js</span>
-                                <span class="skill-percentage">88%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="88"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">NestJS</span>
-                                <span class="skill-percentage">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">NuxtJS</span>
-                                <span class="skill-percentage">87%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="87"></div>
+                            <div class="skill-item">
+                                <span class="skill-name">NuxtJS</span><span class="skill-percentage">87%</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--skill-width: 87%;"></div></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-key="projects.title">پروژه‌های من</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-key="projects.title">پروژه‌های من</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="projects-grid">
+                     <div class="project-card">
+                        <div class="project-image" style="background-image: url('assets/images/project1.jpg');"></div>
+                        <div class="project-content">
+                            <h3 class="project-title" data-key="projects.project1.title">پلتفرم تجارت الکترونیک</h3>
+                            <p class="project-description" data-key="projects.project1.description">یک پلتفرم کامل تجارت الکترونیک با React و Node.js</p>
+                            <div class="project-tech"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
                             <div class="project-links">
-                                <a href="#" class="project-link" data-key="projects.demo">نمایش</a>
-                                <a href="#" class="project-link" data-key="projects.code">کد</a>
+                                <a href="#" class="project-link" data-key="projects.demo" target="_blank">نمایش</a>
+                                <a href="#" class="project-link" data-key="projects.code" target="_blank">کد</a>
                             </div>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title" data-key="projects.project1.title">پلتفرم تجارت الکترونیک</h3>
-                        <p class="project-description" data-key="projects.project1.description">
-                            یک پلتفرم کامل تجارت الکترونیک با React و Node.js
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('assets/images/project2.jpg');"></div>
+                        <div class="project-content">
+                            <h3 class="project-title" data-key="projects.project2.title">داشبورد مدیریت</h3>
+                            <p class="project-description" data-key="projects.project2.description">داشبورد مدیریت پیشرفته با Vue.js و NuxtJS</p>
+                            <div class="project-tech"><span>Vue.js</span><span>NuxtJS</span><span>PostgreSQL</span></div>
                             <div class="project-links">
-                                <a href="#" class="project-link" data-key="projects.demo">نمایش</a>
-                                <a href="#" class="project-link" data-key="projects.code">کد</a>
+                                <a href="#" class="project-link" data-key="projects.demo" target="_blank">نمایش</a>
+                                <a href="#" class="project-link" data-key="projects.code" target="_blank">کد</a>
                             </div>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title" data-key="projects.project2.title">داشبورد مدیریت</h3>
-                        <p class="project-description" data-key="projects.project2.description">
-                            داشبورد مدیریت پیشرفته با Vue.js و NuxtJS
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">NuxtJS</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('assets/images/project3.jpg');"></div>
+                        <div class="project-content">
+                            <h3 class="project-title" data-key="projects.project3.title">API مایکروسرویس</h3>
+                            <p class="project-description" data-key="projects.project3.description">معماری مایکروسرویس با NestJS و Docker</p>
+                            <div class="project-tech"><span>NestJS</span><span>Docker</span><span>Redis</span></div>
                             <div class="project-links">
-                                <a href="#" class="project-link" data-key="projects.demo">نمایش</a>
-                                <a href="#" class="project-link" data-key="projects.code">کد</a>
+                                <a href="#" class="project-link" data-key="projects.demo" target="_blank">نمایش</a>
+                                <a href="#" class="project-link" data-key="projects.code" target="_blank">کد</a>
                             </div>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title" data-key="projects.project3.title">API مایکروسرویس</h3>
-                        <p class="project-description" data-key="projects.project3.description">
-                            معماری مایکروسرویس با NestJS و Docker
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">NestJS</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Redis</span>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-key="experience.title">تجربیات کاری</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date" data-key="experience.job1.date">۲۰۲۲ - اکنون</div>
-                        <h3 class="timeline-title" data-key="experience.job1.title">مهندس ارشد فول‌استک</h3>
-                        <h4 class="timeline-company" data-key="experience.job1.company">شرکت تکنولوژی پیشرو</h4>
-                        <p class="timeline-description" data-key="experience.job1.description">
-                            رهبری تیم توسعه و طراحی معماری سیستم‌های پیچیده
-                        </p>
-                    </div>
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-key="experience.title">تجربیات کاری</h2>
+                    <div class="section-line"></div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date" data-key="experience.job2.date">۲۰۲۰ - ۲۰۲۲</div>
-                        <h3 class="timeline-title" data-key="experience.job2.title">توسعه‌دهنده فول‌استک</h3>
-                        <h4 class="timeline-company" data-key="experience.job2.company">استارتاپ نوآور</h4>
-                        <p class="timeline-description" data-key="experience.job2.description">
-                            توسعه اپلیکیشن‌های وب مدرن با React و Node.js
-                        </p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date" data-key="experience.job1.date">۲۰۲۲ - اکنون</div>
+                            <h3 class="timeline-title" data-key="experience.job1.title">مهندس ارشد فول‌استک</h3>
+                            <h4 class="timeline-company" data-key="experience.job1.company">شرکت تکنولوژی پیشرو</h4>
+                            <p class="timeline-description" data-key="experience.job1.description">رهبری تیم توسعه و طراحی معماری سیستم‌های پیچیده</p>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date" data-key="experience.job3.date">۲۰۱۹ - ۲۰۲۰</div>
-                        <h3 class="timeline-title" data-key="experience.job3.title">توسعه‌دهنده فرانت‌اند</h3>
-                        <h4 class="timeline-company" data-key="experience.job3.company">آژانس دیجیتال</h4>
-                        <p class="timeline-description" data-key="experience.job3.description">
-                            ساخت رابط کاربری واکنش‌گرا و تجربه کاربری بهینه
-                        </p>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date" data-key="experience.job2.date">۲۰۲۰ - ۲۰۲۲</div>
+                            <h3 class="timeline-title" data-key="experience.job2.title">توسعه‌دهنده فول‌استک</h3>
+                            <h4 class="timeline-company" data-key="experience.job2.company">استارتاپ نوآور</h4>
+                            <p class="timeline-description" data-key="experience.job2.description">توسعه اپلیکیشن‌های وب مدرن با React و Node.js</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date" data-key="experience.job3.date">۲۰۱۹ - ۲۰۲۰</div>
+                            <h3 class="timeline-title" data-key="experience.job3.title">توسعه‌دهنده فرانت‌اند</h3>
+                            <h4 class="timeline-company" data-key="experience.job3.company">آژانس دیجیتال</h4>
+                            <p class="timeline-description" data-key="experience.job3.description">ساخت رابط کاربری واکنش‌گرا و تجربه کاربری بهینه</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-key="contact.title">تماس با من</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
-                            <h3 data-key="contact.email.title">ایمیل</h3>
-                            <p>hassanhashemi.pro@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div class="contact-details">
-                            <h3 data-key="contact.phone.title">تلفن</h3>
-                            <p>09184334923</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <div class="contact-details">
-                            <h3 data-key="contact.linkedin.title">لینکدین</h3>
-                            <p>hassan-hashemi</p>
-                        </div>
-                    </div>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-key="contact.title">تماس با من</h2>
+                    <div class="section-line"></div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required>
-                        <label for="name" data-key="contact.form.name">نام شما</label>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3 data-key="contact.email.title">ایمیل</h3>
+                                <p><a href="mailto:hassanhashemi.pro@gmail.com">hassanhashemi.pro@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h3 data-key="contact.phone.title">تلفن</h3>
+                                <p><a href="tel:09184334923">09184334923</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-details">
+                                <h3 data-key="contact.linkedin.title">لینکدین</h3>
+                                <p><a href="https://www.linkedin.com/in/hassan-hashemi" target="_blank" rel="noopener">hassan-hashemi</a></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required>
-                        <label for="email" data-key="contact.form.email">ایمیل شما</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" required></textarea>
-                        <label for="message" data-key="contact.form.message">پیام شما</label>
-                    </div>
-                    <button type="submit" class="submit-btn">
-                        <span data-key="contact.form.send">ارسال پیام</span>
-                    </button>
-                </form>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name" data-key="contact.form.name">نام شما</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email" data-key="contact.form.email">ایمیل شما</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                            <label for="message" data-key="contact.form.message">پیام شما</label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text" data-key="contact.form.send">ارسال پیام</span>
+                            <span class="btn-spinner"></span>
+                        </button>
+                        <div class="form-status"></div>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    </main>
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p data-key="footer.copyright">© ۲۰۲۴ محمد حسن هاشمی. تمام حقوق محفوظ است.</p>
-                <div class="footer-links">
-                    <a href="mailto:hassanhashemi.pro@gmail.com" class="footer-link">ایمیل</a>
-                    <a href="https://www.linkedin.com/in/hassan-hashemi" target="_blank" rel="noopener" class="footer-link">لینکدین</a>
-                </div>
-            </div>
+            <p data-key="footer.copyright">© ۲۰۲۴ محمد حسن هاشمی. تمام حقوق محفوظ است.</p>
         </div>
     </footer>
 
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-nav">
+        <button class="mobile-nav-btn" id="langToggleMobile">🌐</button>
+        <a href="#hero" class="mobile-nav-btn">🏠</a>
+        <button class="mobile-nav-btn" id="themeToggleMobile">🌙</button>
+    </div>
+
+    <!-- Language Modal for Mobile -->
+    <div class="lang-modal-overlay">
+        <div class="lang-modal">
+            <h3 data-key="lang.select">انتخاب زبان</h3>
+            <button class="lang-modal-btn" data-lang="fa">🇮🇷 فارسی</button>
+            <button class="lang-modal-btn" data-lang="en">🇺🇸 English</button>
+            <button class="lang-modal-btn" data-lang="ar">🇸🇦 العربية</button>
+            <button class="lang-modal-close" data-key="lang.close">بستن</button>
+        </div>
+    </div>
+
     <script src="main.js"></script>
 </body>
-</html> 
+</html>
