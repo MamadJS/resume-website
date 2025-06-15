@@ -3,318 +3,862 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Hassan Hashemi - Senior Full-Stack Engineer</title>
-    <meta name="description" content="Senior Full-Stack Engineer specializing in React, Vue, Node.js, NestJS, NuxtJS">
+    <title data-key="meta.title">محمد حسن هاشمی - مهندس ارشد فول‌استک</title>
+    <meta name="description" content="وب‌سایت رزومه شخصی محمد حسن هاشمی، مهندس ارشد فول‌استک متخصص در React, Vue, Node.js, NestJS, و NuxtJS.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-blue': '#00ffff',
+                        'cyber-purple': '#8a2be2',
+                        'cyber-pink': '#ff1493',
+                        'cyber-green': '#00ff7f',
+                        'cyber-orange': '#ffa500',
+                        'dark-bg': '#0a0a0a',
+                        'dark-card': '#1a1a1a',
+                        'dark-border': '#333333'
+                    },
+                    fontFamily: {
+                        'vazir': ['Vazirmatn', 'sans-serif'],
+                        'cairo': ['Cairo', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'code': ['Courier New', 'Monaco', 'Menlo', 'monospace']
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'scale-up': 'scaleUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff' },
+                            '100%': { boxShadow: '0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        scaleUp: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                        'cyber-gradient': 'linear-gradient(135deg, #00ffff, #8a2be2, #ff1493)',
+                        'code-gradient': 'linear-gradient(45deg, #1a1a1a, #2a2a2a, #1a1a1a)',
+                    }
+                }
+            }
+        }
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body data-theme="dark">
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="preloader-content">
-            <div class="preloader-logo">MH</div>
-            <div class="code-animation">
-                <span>Loading dependencies...</span>
-                <span>Compiling modules...</span>
-                <span>Starting dev server...</span>
-                <span class="comment">// Welcome!</span>
-            </div>
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
-    <!-- Animated Backgrounds Container -->
-    <div class="background-container">
-        <div class="grid-bg"></div>
-        <div class="particles-bg"></div>
-        <div class="starfield"></div>
-    </div>
-
-    <!-- Desktop Language & Theme Switchers -->
-    <div class="desktop-controls">
-        <div class="language-switcher">
-            <button class="lang-menu-toggle" title="Trilingual | سه زبانه | ثلاثي اللغات">🌐</button>
-            <div class="lang-menu">
-                <button class="lang-btn active" data-lang="fa">🇮🇷</button>
-                <button class="lang-btn" data-lang="en">🇺🇸</button>
-                <button class="lang-btn" data-lang="ar">🇸🇦</button>
-            </div>
-        </div>
-        <div class="theme-switcher">
-            <button class="theme-btn" id="themeToggleDesktop">
-                <span class="theme-icon">🌙</span>
-            </button>
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#hero" class="logo-text" data-key="nav.logo">MH</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#hero" class="nav-link active" data-key="nav.home">خانه</a></li>
-                <li><a href="#about" class="nav-link" data-key="nav.about">درباره من</a></li>
-                <li><a href="#projects" class="nav-link" data-key="nav.projects">پروژه‌ها</a></li>
-                <li><a href="#experience" class="nav-link" data-key="nav.experience">تجربیات</a></li>
-                <li><a href="#contact" class="nav-link" data-key="nav.contact">تماس</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <div class="hero-container container">
-                <div class="hero-content">
-                    <div class="hero-avatar">
-                        <img src="assets/images/profile.jpg" alt="Mohammad Hassan Hashemi" class="profile-image">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="preloader-content">
+            <div id="preloader-text">> Booting up portfolio...</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cursor"></div>
+
+    <div class="background-effects"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/80 backdrop-blur-md border-b border-cyber-blue/20">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#hero" class="group flex items-center gap-3" data-key="nav.logo">
+                    <div class="relative">
+                        <div class="w-12 h-12 bg-gradient-to-br from-cyber-blue to-cyber-purple rounded-xl flex items-center justify-center font-bold text-white text-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+                            MH
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-cyber-blue to-cyber-purple rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity"></div>
                     </div>
-                    <h1 class="hero-name">
-                        <span class="typing-text" data-key="hero.name">محمد حسن هاشمی</span>
-                    </h1>
-                    <h2 class="hero-title">
-                        <span class="gradient-text" data-key="hero.title">مهندس ارشد فول‌استک</span>
-                    </h2>
-                    <p class="hero-description" data-key="hero.description">
-                        متخصص در React، Vue، Node.js، NestJS و NuxtJS
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary" data-key="hero.contact">تماس با من</a>
-                        <a href="https://www.linkedin.com/in/hassan-hashemi" target="_blank" rel="noopener" class="btn btn-secondary" data-key="hero.linkedin">لینکدین</a>
-                    </div>
-                </div>
-                <a href="#about" class="scroll-indicator">
-                    <div class="mouse"></div>
+                    <span class="hidden md:block text-white font-bold text-lg font-vazir">محمد حسن</span>
                 </a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title" data-key="about.title">درباره من</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p data-key="about.description">
-                            من یک مهندس نرم‌افزار با بیش از ۵ سال تجربه در توسعه وب هستم. تخصص من در ساخت اپلیکیشن‌های مدرن و قابل اعتماد با استفاده از جدیدترین تکنولوژی‌ها است.
-                        </p>
-                    </div>
-                    <div class="skills-container">
-                        <h3 class="skills-title" data-key="about.skills">مهارت‌های من</h3>
-                        <div class="skills-grid">
-                             <div class="skill-item">
-                                <span class="skill-name">React</span><span class="skill-percentage">95%</span>
-                                <div class="skill-bar"><div class="skill-progress" style="--skill-width: 95%;"></div></div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <ul class="flex items-center gap-6">
+                        <li><a href="#about" class="nav-link relative text-gray-300 hover:text-cyber-blue transition-colors duration-300 font-vazir group" data-key="nav.about">
+                            درباره من
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="#projects" class="nav-link relative text-gray-300 hover:text-cyber-green transition-colors duration-300 font-vazir group" data-key="nav.projects">
+                            پروژه‌ها
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyber-green transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="#experience" class="nav-link relative text-gray-300 hover:text-cyber-orange transition-colors duration-300 font-vazir group" data-key="nav.experience">
+                            تجربه
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyber-orange transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                        <li><a href="#contact" class="nav-link relative text-gray-300 hover:text-cyber-pink transition-colors duration-300 font-vazir group" data-key="nav.contact">
+                            تماس
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyber-pink transition-all duration-300 group-hover:w-full"></span>
+                        </a></li>
+                    </ul>
+                    
+                    <!-- Theme & Language Switchers -->
+                    <div class="flex items-center gap-4">
+                        <!-- Creative Theme Switcher -->
+                        <button id="themeToggle" 
+                                class="relative w-16 h-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-full border border-gray-700 hover:border-cyber-blue transition-all duration-300 hover:scale-105 group overflow-hidden"
+                                aria-label="Toggle Theme">
+                            <!-- Toggle Background -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-cyber-blue to-cyber-purple opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-full"></div>
+                            
+                            <!-- Toggle Ball -->
+                            <div class="theme-toggle-ball absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-lg transition-all duration-300 flex items-center justify-center">
+                                <span class="theme-icon-moon text-xs">🌙</span>
+                                <span class="theme-icon-sun text-xs hidden">☀️</span>
                             </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Vue.js</span><span class="skill-percentage">90%</span>
-                                <div class="skill-bar"><div class="skill-progress" style="--skill-width: 90%;"></div></div>
+                            
+                            <!-- Background Icons -->
+                            <div class="absolute inset-0 flex items-center justify-between px-2 text-xs opacity-50">
+                                <span>🌙</span>
+                                <span>☀️</span>
                             </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Node.js</span><span class="skill-percentage">88%</span>
-                                <div class="skill-bar"><div class="skill-progress" style="--skill-width: 88%;"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">NestJS</span><span class="skill-percentage">85%</span>
-                                <div class="skill-bar"><div class="skill-progress" style="--skill-width: 85%;"></div></div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">NuxtJS</span><span class="skill-percentage">87%</span>
-                                <div class="skill-bar"><div class="skill-progress" style="--skill-width: 87%;"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title" data-key="projects.title">پروژه‌های من</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="projects-grid">
-                     <div class="project-card">
-                        <div class="project-image" style="background-image: url('assets/images/project1.jpg');"></div>
-                        <div class="project-content">
-                            <h3 class="project-title" data-key="projects.project1.title">پلتفرم تجارت الکترونیک</h3>
-                            <p class="project-description" data-key="projects.project1.description">یک پلتفرم کامل تجارت الکترونیک با React و Node.js</p>
-                            <div class="project-tech"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
-                            <div class="project-links">
-                                <a href="#" class="project-link" data-key="projects.demo" target="_blank">نمایش</a>
-                                <a href="#" class="project-link" data-key="projects.code" target="_blank">کد</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('assets/images/project2.jpg');"></div>
-                        <div class="project-content">
-                            <h3 class="project-title" data-key="projects.project2.title">داشبورد مدیریت</h3>
-                            <p class="project-description" data-key="projects.project2.description">داشبورد مدیریت پیشرفته با Vue.js و NuxtJS</p>
-                            <div class="project-tech"><span>Vue.js</span><span>NuxtJS</span><span>PostgreSQL</span></div>
-                            <div class="project-links">
-                                <a href="#" class="project-link" data-key="projects.demo" target="_blank">نمایش</a>
-                                <a href="#" class="project-link" data-key="projects.code" target="_blank">کد</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('assets/images/project3.jpg');"></div>
-                        <div class="project-content">
-                            <h3 class="project-title" data-key="projects.project3.title">API مایکروسرویس</h3>
-                            <p class="project-description" data-key="projects.project3.description">معماری مایکروسرویس با NestJS و Docker</p>
-                            <div class="project-tech"><span>NestJS</span><span>Docker</span><span>Redis</span></div>
-                            <div class="project-links">
-                                <a href="#" class="project-link" data-key="projects.demo" target="_blank">نمایش</a>
-                                <a href="#" class="project-link" data-key="projects.code" target="_blank">کد</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="experience">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title" data-key="experience.title">تجربیات کاری</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date" data-key="experience.job1.date">۲۰۲۲ - اکنون</div>
-                            <h3 class="timeline-title" data-key="experience.job1.title">مهندس ارشد فول‌استک</h3>
-                            <h4 class="timeline-company" data-key="experience.job1.company">شرکت تکنولوژی پیشرو</h4>
-                            <p class="timeline-description" data-key="experience.job1.description">رهبری تیم توسعه و طراحی معماری سیستم‌های پیچیده</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date" data-key="experience.job2.date">۲۰۲۰ - ۲۰۲۲</div>
-                            <h3 class="timeline-title" data-key="experience.job2.title">توسعه‌دهنده فول‌استک</h3>
-                            <h4 class="timeline-company" data-key="experience.job2.company">استارتاپ نوآور</h4>
-                            <p class="timeline-description" data-key="experience.job2.description">توسعه اپلیکیشن‌های وب مدرن با React و Node.js</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date" data-key="experience.job3.date">۲۰۱۹ - ۲۰۲۰</div>
-                            <h3 class="timeline-title" data-key="experience.job3.title">توسعه‌دهنده فرانت‌اند</h3>
-                            <h4 class="timeline-company" data-key="experience.job3.company">آژانس دیجیتال</h4>
-                            <p class="timeline-description" data-key="experience.job3.description">ساخت رابط کاربری واکنش‌گرا و تجربه کاربری بهینه</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title" data-key="contact.title">تماس با من</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">📧</div>
-                            <div class="contact-details">
-                                <h3 data-key="contact.email.title">ایمیل</h3>
-                                <p><a href="mailto:hassanhashemi.pro@gmail.com">hassanhashemi.pro@gmail.com</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">📱</div>
-                            <div class="contact-details">
-                                <h3 data-key="contact.phone.title">تلفن</h3>
-                                <p><a href="tel:09184334923">09184334923</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">💼</div>
-                            <div class="contact-details">
-                                <h3 data-key="contact.linkedin.title">لینکدین</h3>
-                                <p><a href="https://www.linkedin.com/in/hassan-hashemi" target="_blank" rel="noopener">hassan-hashemi</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" required>
-                            <label for="name" data-key="contact.form.name">نام شما</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" required>
-                            <label for="email" data-key="contact.form.email">ایمیل شما</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                            <label for="message" data-key="contact.form.message">پیام شما</label>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <span class="btn-text" data-key="contact.form.send">ارسال پیام</span>
-                            <span class="btn-spinner"></span>
                         </button>
-                        <div class="form-status"></div>
-                    </form>
+                        
+                        <!-- Language Switcher -->
+                        <div class="relative">
+                            <select id="languageSelector" 
+                                    class="appearance-none bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-full px-4 py-2 text-white text-sm hover:border-cyber-purple hover:shadow-lg hover:shadow-cyber-purple/30 transition-all duration-300 cursor-pointer font-vazir"
+                                    aria-label="Select Language">
+                                <option value="fa">🇮🇷 فارسی</option>
+                                <option value="en">🇺🇸 English</option>
+                                <option value="ar">🇸🇦 العربية</option>
+                            </select>
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden w-10 h-10 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex flex-col items-center justify-center gap-1 border border-gray-700 hover:border-cyber-blue transition-all duration-300 group"
+                        id="mobileMenuToggle" aria-label="Toggle Mobile Menu">
+                    <span class="w-5 h-0.5 bg-gray-300 group-hover:bg-cyber-blue transition-colors duration-300 transform group-hover:rotate-45 group-hover:translate-y-1.5"></span>
+                    <span class="w-5 h-0.5 bg-gray-300 group-hover:bg-cyber-blue transition-colors duration-300 group-hover:opacity-0"></span>
+                    <span class="w-5 h-0.5 bg-gray-300 group-hover:bg-cyber-blue transition-colors duration-300 transform group-hover:-rotate-45 group-hover:-translate-y-1.5"></span>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="lg:hidden absolute top-full left-0 right-0 bg-dark-bg/95 backdrop-blur-md border-b border-cyber-blue/20 transform -translate-y-full opacity-0 transition-all duration-300 pointer-events-none">
+                <div class="container mx-auto px-6 py-6">
+                    <ul class="space-y-4 mb-6">
+                        <li><a href="#about" class="block text-gray-300 hover:text-cyber-blue transition-colors duration-300 font-vazir py-2" data-key="nav.about">درباره من</a></li>
+                        <li><a href="#projects" class="block text-gray-300 hover:text-cyber-green transition-colors duration-300 font-vazir py-2" data-key="nav.projects">پروژه‌ها</a></li>
+                        <li><a href="#experience" class="block text-gray-300 hover:text-cyber-orange transition-colors duration-300 font-vazir py-2" data-key="nav.experience">تجربه</a></li>
+                        <li><a href="#contact" class="block text-gray-300 hover:text-cyber-pink transition-colors duration-300 font-vazir py-2" data-key="nav.contact">تماس</a></li>
+                    </ul>
+                    
+                    <div class="flex items-center justify-center gap-4 pt-4 border-t border-gray-800">
+                        <button id="mobileThemeToggle" 
+                                class="relative w-16 h-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-full border border-gray-700 hover:border-cyber-blue transition-all duration-300 overflow-hidden"
+                                aria-label="Toggle Theme">
+                            <!-- Toggle Ball -->
+                            <div class="mobile-theme-toggle-ball absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-lg transition-all duration-300 flex items-center justify-center">
+                                <span class="mobile-theme-icon-moon text-xs">🌙</span>
+                                <span class="mobile-theme-icon-sun text-xs hidden">☀️</span>
+                            </div>
+                            
+                            <!-- Background Icons -->
+                            <div class="absolute inset-0 flex items-center justify-between px-2 text-xs opacity-50">
+                                <span>🌙</span>
+                                <span>☀️</span>
+                            </div>
+                        </button>
+                        
+                        <select id="mobileLangSelector" 
+                                class="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-full px-4 py-2 text-white text-sm font-vazir"
+                                aria-label="Select Language">
+                            <option value="fa">🇮🇷 فارسی</option>
+                            <option value="en">🇺🇸 English</option>
+                            <option value="ar">🇸🇦 العربية</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-bg via-gray-900 to-dark-card pt-20">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyber-blue/10 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyber-purple/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyber-pink/10 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
+            </div>
+            
+            <!-- Floating Particles -->
+            <div class="absolute inset-0">
+                <div class="absolute top-20 left-20 w-2 h-2 bg-cyber-blue rounded-full animate-float"></div>
+                <div class="absolute top-40 right-32 w-1 h-1 bg-cyber-green rounded-full animate-float delay-1000"></div>
+                <div class="absolute bottom-32 left-40 w-3 h-3 bg-cyber-pink rounded-full animate-float delay-2000"></div>
+                <div class="absolute bottom-20 right-20 w-2 h-2 bg-cyber-orange rounded-full animate-float delay-3000"></div>
+            </div>
+            
+            <div class="relative z-10 container mx-auto px-6 text-center">
+                <!-- Avatar with Cyber Effects -->
+                <div class="relative mb-8 inline-block">
+                    <div class="relative w-48 h-48 mx-auto">
+                        <!-- Rotating Border -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink animate-spin-slow p-1">
+                            <div class="w-full h-full rounded-full bg-dark-bg"></div>
+                        </div>
+                        <!-- Profile Image -->
+                        <img src="assets/images/profile.jpg" alt="تصویر پروفایل محمد حسن هاشمی" 
+                             class="absolute inset-2 w-44 h-44 rounded-full object-cover border-4 border-dark-bg shadow-2xl animate-glow">
+                        <!-- Glow Effect -->
+                        <div class="absolute inset-0 rounded-full bg-cyber-blue/20 blur-xl animate-pulse-slow"></div>
+                    </div>
+                    <!-- Floating Icons -->
+                    <div class="absolute -top-4 -right-4 w-8 h-8 bg-cyber-green/20 rounded-full flex items-center justify-center animate-bounce-slow">
+                        <span class="text-cyber-green text-sm">⚡</span>
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 w-8 h-8 bg-cyber-pink/20 rounded-full flex items-center justify-center animate-bounce-slow delay-1000">
+                        <span class="text-cyber-pink text-sm">💻</span>
+                    </div>
+                </div>
+                
+                <!-- Hero Text with Gradient Effects -->
+                <div class="space-y-6">
+                    <h1 class="text-5xl md:text-7xl font-bold font-vazir">
+                        <span class="block text-gray-300 text-2xl md:text-3xl mb-2 animate-fade-in" data-key="hero.greeting">سلام، من</span>
+                        <span class="block bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink bg-clip-text text-transparent animate-pulse" data-key="name">محمد حسن هاشمی</span>
+                    </h1>
+                    
+                    <h2 class="text-2xl md:text-4xl font-semibold text-cyber-green font-code">
+                        <span class="typing-text border-r-2 border-cyber-green animate-pulse" data-key="title"></span>
+                    </h2>
+                    
+                    <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-vazir" data-key="subtitle">
+                        ساخت اپلیکیشن‌های وب سریع و مقیاس‌پذیر | آماده همکاری ریموت و فریلنسری
+                    </p>
+                    
+                    <!-- CTA Buttons with Cyber Effects -->
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12">
+                        <a href="#contact" 
+                           class="group relative px-8 py-4 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-full text-white font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyber-blue/50 overflow-hidden"
+                           data-key="hero.contactBtn">
+                            <span class="relative z-10">تماس با من</span>
+                            <div class="absolute inset-0 bg-gradient-to-r from-cyber-purple to-cyber-pink opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 bg-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        </a>
+                        
+                        <a href="assets/Hassan-Hashemi-CV.pdf" download
+                           class="group relative px-8 py-4 border-2 border-cyber-green text-cyber-green rounded-full font-semibold text-lg transition-all duration-300 hover:bg-cyber-green hover:text-dark-bg hover:scale-105 hover:shadow-2xl hover:shadow-cyber-green/50"
+                           data-key="hero.resumeBtn">
+                            <span class="flex items-center gap-2">
+                                <span>دانلود رزومه</span>
+                                <svg class="w-5 h-5 group-hover:animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Scroll Indicator -->
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="relative py-20 bg-gradient-to-b from-dark-card to-dark-bg overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, rgba(0,255,255,0.3) 1px, transparent 0); background-size: 50px 50px;"></div>
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <!-- Section Title -->
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold font-vazir bg-gradient-to-r from-cyber-blue to-cyber-purple bg-clip-text text-transparent mb-4" data-key="about.title">درباره من</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-cyber-blue to-cyber-purple mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- About Text -->
+                    <div class="animate-on-scroll">
+                        <div class="relative p-8 bg-gradient-to-br from-dark-card/50 to-gray-900/50 rounded-3xl border border-cyber-blue/20 backdrop-blur-sm">
+                            <!-- Decorative Corner -->
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyber-blue/20 to-transparent rounded-bl-3xl"></div>
+                            <div class="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-cyber-purple/20 to-transparent rounded-tr-3xl"></div>
+                            
+                            <p class="text-lg leading-relaxed text-gray-300 font-vazir relative z-10" data-key="about.description">
+                                یک مهندس فول‌استک با اشتیاق فراوان برای ساخت وب‌اپلیکیشن‌های سریع، مقیاس‌پذیر و کاربرپسند. با تخصص عمیق در اکوسیستم جاوااسکریپت، از جمله React، Vue و Node.js، همواره به دنبال ارائه کدی با کیفیت و خلق تجربیات دیجیتال بی‌نظیر برای کاربران هستم.
+                            </p>
+                            
+                            <!-- Stats -->
+                            <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-cyber-blue/20">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-cyber-blue">5+</div>
+                                    <div class="text-sm text-gray-400">سال تجربه</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-cyber-green">50+</div>
+                                    <div class="text-sm text-gray-400">پروژه موفق</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-cyber-pink">100%</div>
+                                    <div class="text-sm text-gray-400">رضایت مشتری</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skills Grid -->
+                    <div class="animate-on-scroll">
+                        <h3 class="text-2xl font-bold text-cyber-green mb-8 font-vazir" data-key="about.skillsTitle">مهارت‌های کلیدی</h3>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- React -->
+                            <div class="group relative p-6 bg-gradient-to-br from-blue-500/10 to-blue-600/5 rounded-2xl border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                                        <span class="text-blue-400 text-xl">⚛️</span>
+                                    </div>
+                                    <h4 class="font-semibold text-blue-400">React</h4>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full w-[95%] animate-pulse"></div>
+                                </div>
+                                <span class="text-xs text-gray-400 mt-1 block">95%</span>
+                            </div>
+                            
+                            <!-- Vue -->
+                            <div class="group relative p-6 bg-gradient-to-br from-green-500/10 to-green-600/5 rounded-2xl border border-green-500/20 hover:border-green-400/40 transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
+                                        <span class="text-green-400 text-xl">🟢</span>
+                                    </div>
+                                    <h4 class="font-semibold text-green-400">Vue.js</h4>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full w-[90%] animate-pulse delay-200"></div>
+                                </div>
+                                <span class="text-xs text-gray-400 mt-1 block">90%</span>
+                            </div>
+                            
+                            <!-- Node.js -->
+                            <div class="group relative p-6 bg-gradient-to-br from-yellow-500/10 to-yellow-600/5 rounded-2xl border border-yellow-500/20 hover:border-yellow-400/40 transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                                        <span class="text-yellow-400 text-xl">🟡</span>
+                                    </div>
+                                    <h4 class="font-semibold text-yellow-400">Node.js</h4>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-yellow-400 to-yellow-600 h-2 rounded-full w-[88%] animate-pulse delay-400"></div>
+                                </div>
+                                <span class="text-xs text-gray-400 mt-1 block">88%</span>
+                            </div>
+                            
+                            <!-- NestJS -->
+                            <div class="group relative p-6 bg-gradient-to-br from-red-500/10 to-red-600/5 rounded-2xl border border-red-500/20 hover:border-red-400/40 transition-all duration-300 hover:scale-105">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
+                                        <span class="text-red-400 text-xl">🔴</span>
+                                    </div>
+                                    <h4 class="font-semibold text-red-400">NestJS</h4>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-red-400 to-red-600 h-2 rounded-full w-[85%] animate-pulse delay-600"></div>
+                                </div>
+                                <span class="text-xs text-gray-400 mt-1 block">85%</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Dynamic Skills Grid -->
+                        <div class="skills-grid-v2 mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <!-- Skills will be dynamically loaded here by JavaScript -->
+                        </div>
+                        
+                        <!-- Additional Skills Tags -->
+                        <div class="mt-8 flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/30 rounded-full text-sm font-medium hover:bg-cyber-blue/20 transition-colors">TypeScript</span>
+                            <span class="px-4 py-2 bg-cyber-purple/10 text-cyber-purple border border-cyber-purple/30 rounded-full text-sm font-medium hover:bg-cyber-purple/20 transition-colors">MongoDB</span>
+                            <span class="px-4 py-2 bg-cyber-green/10 text-cyber-green border border-cyber-green/30 rounded-full text-sm font-medium hover:bg-cyber-green/20 transition-colors">Docker</span>
+                            <span class="px-4 py-2 bg-cyber-pink/10 text-cyber-pink border border-cyber-pink/30 rounded-full text-sm font-medium hover:bg-cyber-pink/20 transition-colors">AWS</span>
+                            <span class="px-4 py-2 bg-cyber-orange/10 text-cyber-orange border border-cyber-orange/30 rounded-full text-sm font-medium hover:bg-cyber-orange/20 transition-colors">GraphQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="relative py-20 bg-gradient-to-b from-dark-bg to-dark-card overflow-hidden">
+            <!-- Animated Background -->
+            <div class="absolute inset-0">
+                <div class="absolute top-10 left-10 w-72 h-72 bg-cyber-purple/5 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div class="absolute bottom-10 right-10 w-96 h-96 bg-cyber-blue/5 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <!-- Section Title -->
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold font-vazir bg-gradient-to-r from-cyber-purple to-cyber-pink bg-clip-text text-transparent mb-4" data-key="projects.title">پروژه‌های منتخب</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-cyber-purple to-cyber-pink mx-auto rounded-full"></div>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">نمونه‌ای از پروژه‌های موفق که با تکنولوژی‌های مدرن توسعه داده‌ام</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="group animate-on-scroll">
+                        <div class="relative h-full bg-gradient-to-br from-dark-card/80 to-gray-900/80 rounded-3xl border border-cyber-blue/20 overflow-hidden backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-cyber-blue/40 hover:shadow-2xl hover:shadow-cyber-blue/20">
+                            <!-- Project Image Placeholder -->
+                            <div class="relative h-48 bg-gradient-to-br from-blue-500/20 to-purple-600/20 overflow-hidden">
+                                <div class="absolute inset-0 bg-code-gradient opacity-50"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="text-6xl opacity-30">🛒</div>
+                                </div>
+                                <!-- Hover Overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-3 font-vazir group-hover:text-cyber-blue transition-colors" data-key="projects.p1.title">پلتفرم تجارت الکترونیک</h3>
+                                <p class="text-gray-400 mb-4 leading-relaxed" data-key="projects.p1.desc">یک پلتفرم کامل با React و NestJS.</p>
+                                
+                                <!-- Tech Stack -->
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-full text-xs font-medium">React</span>
+                                    <span class="px-3 py-1 bg-red-500/20 text-red-400 border border-red-500/30 rounded-full text-xs font-medium">NestJS</span>
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 border border-green-500/30 rounded-full text-xs font-medium">MongoDB</span>
+                                </div>
+                                
+                                <!-- Action Buttons -->
+                                <div class="flex gap-3">
+                                    <a href="#" target="_blank" rel="noopener noreferrer" 
+                                       class="flex-1 px-4 py-2 bg-gradient-to-r from-cyber-blue to-cyber-purple text-white text-center rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyber-blue/30"
+                                       data-key="projects.live">
+                                        <span class="flex items-center justify-center gap-2">
+                                            <span>مشاهده دمو</span>
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                       class="px-4 py-2 border border-cyber-green text-cyber-green rounded-lg font-medium transition-all duration-300 hover:bg-cyber-green hover:text-dark-bg hover:scale-105"
+                                       data-key="projects.code">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="group animate-on-scroll">
+                        <div class="relative h-full bg-gradient-to-br from-dark-card/80 to-gray-900/80 rounded-3xl border border-cyber-green/20 overflow-hidden backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-cyber-green/40 hover:shadow-2xl hover:shadow-cyber-green/20">
+                            <!-- Project Image Placeholder -->
+                            <div class="relative h-48 bg-gradient-to-br from-green-500/20 to-blue-600/20 overflow-hidden">
+                                <div class="absolute inset-0 bg-code-gradient opacity-50"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="text-6xl opacity-30">📊</div>
+                                </div>
+                                <!-- Hover Overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-3 font-vazir group-hover:text-cyber-green transition-colors" data-key="projects.p2.title">داشبورد آنالیتیکس</h3>
+                                <p class="text-gray-400 mb-4 leading-relaxed" data-key="projects.p2.desc">داشبورد مدیریت با Vue 3 و Nuxt.js.</p>
+                                
+                                <!-- Tech Stack -->
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 border border-green-500/30 rounded-full text-xs font-medium">Vue.js</span>
+                                    <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-full text-xs font-medium">Nuxt.js</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-full text-xs font-medium">Chart.js</span>
+                                </div>
+                                
+                                <!-- Action Buttons -->
+                                <div class="flex gap-3">
+                                    <a href="#" target="_blank" rel="noopener noreferrer" 
+                                       class="flex-1 px-4 py-2 bg-gradient-to-r from-cyber-green to-cyber-blue text-white text-center rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyber-green/30"
+                                       data-key="projects.live">
+                                        <span class="flex items-center justify-center gap-2">
+                                            <span>مشاهده دمو</span>
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                       class="px-4 py-2 border border-cyber-purple text-cyber-purple rounded-lg font-medium transition-all duration-300 hover:bg-cyber-purple hover:text-white hover:scale-105"
+                                       data-key="projects.code">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="group animate-on-scroll">
+                        <div class="relative h-full bg-gradient-to-br from-dark-card/80 to-gray-900/80 rounded-3xl border border-cyber-pink/20 overflow-hidden backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-cyber-pink/40 hover:shadow-2xl hover:shadow-cyber-pink/20">
+                            <!-- Project Image Placeholder -->
+                            <div class="relative h-48 bg-gradient-to-br from-pink-500/20 to-orange-600/20 overflow-hidden">
+                                <div class="absolute inset-0 bg-code-gradient opacity-50"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="text-6xl opacity-30">🔧</div>
+                                </div>
+                                <!-- Hover Overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-3 font-vazir group-hover:text-cyber-pink transition-colors" data-key="projects.p3.title">API میکروسرویس</h3>
+                                <p class="text-gray-400 mb-4 leading-relaxed" data-key="projects.p3.desc">معماری میکروسرویس با Node.js و Docker.</p>
+                                
+                                <!-- Tech Stack -->
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 rounded-full text-xs font-medium">Node.js</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-full text-xs font-medium">Docker</span>
+                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-400 border border-purple-500/30 rounded-full text-xs font-medium">Redis</span>
+                                </div>
+                                
+                                <!-- Action Buttons -->
+                                <div class="flex gap-3">
+                                    <a href="#" target="_blank" rel="noopener noreferrer" 
+                                       class="flex-1 px-4 py-2 bg-gradient-to-r from-cyber-pink to-cyber-orange text-white text-center rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyber-pink/30"
+                                       data-key="projects.live">
+                                        <span class="flex items-center justify-center gap-2">
+                                            <span>مشاهده دمو</span>
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                       class="px-4 py-2 border border-cyber-orange text-cyber-orange rounded-lg font-medium transition-all duration-300 hover:bg-cyber-orange hover:text-dark-bg hover:scale-105"
+                                       data-key="projects.code">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="relative py-20 bg-gradient-to-b from-dark-card to-dark-bg overflow-hidden">
+            <!-- Background Effects -->
+            <div class="absolute inset-0">
+                <div class="absolute top-20 right-20 w-64 h-64 bg-cyber-green/5 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div class="absolute bottom-20 left-20 w-80 h-80 bg-cyber-orange/5 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <!-- Section Title -->
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold font-vazir bg-gradient-to-r from-cyber-green to-cyber-orange bg-clip-text text-transparent mb-4" data-key="experience.title">سوابق کاری و تحصیلی</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-cyber-green to-cyber-orange mx-auto rounded-full"></div>
+                </div>
+                
+                <!-- Timeline -->
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Timeline Line -->
+                    <div class="absolute right-8 md:right-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-cyber-green via-cyber-blue to-cyber-orange transform md:translate-x-1/2"></div>
+                    
+                    <!-- Timeline Items -->
+                    <div class="space-y-12">
+                        <!-- Experience 1 -->
+                        <div class="relative animate-on-scroll">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <div class="md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                                    <div class="bg-gradient-to-br from-dark-card/80 to-gray-900/80 p-6 rounded-3xl border border-cyber-green/20 backdrop-blur-sm hover:border-cyber-green/40 transition-all duration-300 hover:scale-105">
+                                        <span class="inline-block px-4 py-2 bg-cyber-green/20 text-cyber-green rounded-full text-sm font-medium mb-4" data-key="experience.e1.date">۲۰۲۲ - تاکنون</span>
+                                        <h3 class="text-xl font-bold text-white mb-2 font-vazir" data-key="experience.e1.title">مهندس ارشد فول‌استک</h3>
+                                        <p class="text-cyber-green font-medium mb-3" data-key="experience.e1.company">شرکت فناوری پیشرو</p>
+                                        <p class="text-gray-400 text-sm">طراحی و توسعه سیستم‌های پیچیده وب با React، Node.js و معماری میکروسرویس</p>
+                                    </div>
+                                </div>
+                                <!-- Timeline Dot -->
+                                <div class="absolute right-6 md:right-1/2 w-6 h-6 bg-cyber-green rounded-full border-4 border-dark-bg transform md:translate-x-1/2 shadow-lg shadow-cyber-green/50"></div>
+                                <div class="md:w-1/2 md:pl-8"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience 2 -->
+                        <div class="relative animate-on-scroll">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <div class="md:w-1/2 md:pr-8"></div>
+                                <!-- Timeline Dot -->
+                                <div class="absolute right-6 md:right-1/2 w-6 h-6 bg-cyber-blue rounded-full border-4 border-dark-bg transform md:translate-x-1/2 shadow-lg shadow-cyber-blue/50"></div>
+                                <div class="md:w-1/2 md:pl-8 mb-4 md:mb-0">
+                                    <div class="bg-gradient-to-br from-dark-card/80 to-gray-900/80 p-6 rounded-3xl border border-cyber-blue/20 backdrop-blur-sm hover:border-cyber-blue/40 transition-all duration-300 hover:scale-105">
+                                        <span class="inline-block px-4 py-2 bg-cyber-blue/20 text-cyber-blue rounded-full text-sm font-medium mb-4" data-key="experience.e2.date">۲۰۲۰ - ۲۰۲۲</span>
+                                        <h3 class="text-xl font-bold text-white mb-2 font-vazir" data-key="experience.e2.title">توسعه‌دهنده فول‌استک</h3>
+                                        <p class="text-cyber-blue font-medium mb-3" data-key="experience.e2.company">استارتاپ نوآور</p>
+                                        <p class="text-gray-400 text-sm">توسعه اپلیکیشن‌های وب مدرن با Vue.js، NuxtJS و پیاده‌سازی API های RESTful</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience 3 -->
+                        <div class="relative animate-on-scroll">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <div class="md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                                    <div class="bg-gradient-to-br from-dark-card/80 to-gray-900/80 p-6 rounded-3xl border border-cyber-orange/20 backdrop-blur-sm hover:border-cyber-orange/40 transition-all duration-300 hover:scale-105">
+                                        <span class="inline-block px-4 py-2 bg-cyber-orange/20 text-cyber-orange rounded-full text-sm font-medium mb-4" data-key="experience.e3.date">۲۰۱۶ - ۲۰۲۰</span>
+                                        <h3 class="text-xl font-bold text-white mb-2 font-vazir" data-key="experience.e3.title">کارشناسی مهندسی نرم‌افزار</h3>
+                                        <p class="text-cyber-orange font-medium mb-3" data-key="experience.e3.company">دانشگاه صنعتی شریف</p>
+                                        <p class="text-gray-400 text-sm">تحصیل در رشته مهندسی نرم‌افزار با تمرکز بر الگوریتم‌ها و ساختار داده‌ها</p>
+                                    </div>
+                                </div>
+                                <!-- Timeline Dot -->
+                                <div class="absolute right-6 md:right-1/2 w-6 h-6 bg-cyber-orange rounded-full border-4 border-dark-bg transform md:translate-x-1/2 shadow-lg shadow-cyber-orange/50"></div>
+                                <div class="md:w-1/2 md:pl-8"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="relative py-20 bg-gradient-to-b from-dark-bg to-dark-card overflow-hidden">
+            <!-- Background Effects -->
+            <div class="absolute inset-0">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyber-pink/5 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyber-purple/5 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <!-- Section Title -->
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-bold font-vazir bg-gradient-to-r from-cyber-pink to-cyber-purple bg-clip-text text-transparent mb-4" data-key="contact.title">در تماس باشید</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-cyber-pink to-cyber-purple mx-auto rounded-full"></div>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">آماده همکاری در پروژه‌های جدید و هیجان‌انگیز هستم</p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <!-- Contact Info -->
+                    <div class="animate-on-scroll">
+                        <div class="bg-gradient-to-br from-dark-card/50 to-gray-900/50 p-8 rounded-3xl border border-cyber-pink/20 backdrop-blur-sm">
+                            <h3 class="text-2xl font-bold text-cyber-pink mb-6 font-vazir">بیایید در ارتباط باشیم</h3>
+                            <p class="text-gray-300 mb-8 leading-relaxed" data-key="contact.text">
+                                از همکاری در پروژه‌های هیجان‌انگیز یا یک گفتگوی ساده در مورد تکنولوژی استقبال می‌کنم. از طریق فرم یا راه‌های زیر با من در ارتباط باشید.
+                            </p>
+                            
+                            <!-- Contact Methods -->
+                            <div class="space-y-4">
+                                <a href="mailto:hassanhashemi.pro@gmail.com" 
+                                   class="flex items-center gap-4 p-4 bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10 rounded-2xl border border-cyber-blue/20 hover:border-cyber-blue/40 transition-all duration-300 hover:scale-105 group">
+                                    <div class="w-12 h-12 bg-cyber-blue/20 rounded-full flex items-center justify-center group-hover:bg-cyber-blue/30 transition-colors">
+                                        <svg class="w-6 h-6 text-cyber-blue" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-medium">ایمیل</div>
+                                        <div class="text-cyber-blue text-sm">hassanhashemi.pro@gmail.com</div>
+                                    </div>
+                                </a>
+                                
+                                <a href="tel:09184334923" 
+                                   class="flex items-center gap-4 p-4 bg-gradient-to-r from-cyber-green/10 to-cyber-blue/10 rounded-2xl border border-cyber-green/20 hover:border-cyber-green/40 transition-all duration-300 hover:scale-105 group">
+                                    <div class="w-12 h-12 bg-cyber-green/20 rounded-full flex items-center justify-center group-hover:bg-cyber-green/30 transition-colors">
+                                        <svg class="w-6 h-6 text-cyber-green" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-medium">تلفن</div>
+                                        <div class="text-cyber-green text-sm">09184334923</div>
+                                    </div>
+                                </a>
+                                
+                                <a href="https://www.linkedin.com/in/hassan-hashemi" target="_blank" rel="noopener noreferrer"
+                                   class="flex items-center gap-4 p-4 bg-gradient-to-r from-cyber-purple/10 to-cyber-pink/10 rounded-2xl border border-cyber-purple/20 hover:border-cyber-purple/40 transition-all duration-300 hover:scale-105 group">
+                                    <div class="w-12 h-12 bg-cyber-purple/20 rounded-full flex items-center justify-center group-hover:bg-cyber-purple/30 transition-colors">
+                                        <svg class="w-6 h-6 text-cyber-purple" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-medium">لینکدین</div>
+                                        <div class="text-cyber-purple text-sm">LinkedIn Profile</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="animate-on-scroll">
+                        <form class="bg-gradient-to-br from-dark-card/50 to-gray-900/50 p-8 rounded-3xl border border-cyber-blue/20 backdrop-blur-sm">
+                            <h3 class="text-2xl font-bold text-cyber-blue mb-6 font-vazir">پیام بفرستید</h3>
+                            
+                            <div class="space-y-6">
+                                <!-- Name Field -->
+                                <div class="relative group">
+                                    <input type="text" id="name" name="name" required placeholder=" "
+                                           class="w-full px-4 py-4 bg-dark-bg/50 border-2 border-gray-600 rounded-2xl text-white placeholder-transparent focus:border-cyber-blue focus:outline-none transition-all duration-300 peer">
+                                    <label for="name" 
+                                           class="absolute right-4 top-4 text-gray-400 transition-all duration-300 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-xs peer-focus:text-cyber-blue peer-valid:top-1 peer-valid:text-xs peer-valid:text-cyber-blue font-vazir"
+                                           data-key="contact.form.name">نام</label>
+                                </div>
+                                
+                                <!-- Email Field -->
+                                <div class="relative group">
+                                    <input type="email" id="email" name="email" required placeholder=" "
+                                           class="w-full px-4 py-4 bg-dark-bg/50 border-2 border-gray-600 rounded-2xl text-white placeholder-transparent focus:border-cyber-green focus:outline-none transition-all duration-300 peer">
+                                    <label for="email" 
+                                           class="absolute right-4 top-4 text-gray-400 transition-all duration-300 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-xs peer-focus:text-cyber-green peer-valid:top-1 peer-valid:text-xs peer-valid:text-cyber-green font-vazir"
+                                           data-key="contact.form.email">ایمیل</label>
+                                </div>
+                                
+                                <!-- Message Field -->
+                                <div class="relative group">
+                                    <textarea id="message" name="message" rows="4" required placeholder=" "
+                                              class="w-full px-4 py-4 bg-dark-bg/50 border-2 border-gray-600 rounded-2xl text-white placeholder-transparent focus:border-cyber-purple focus:outline-none transition-all duration-300 peer resize-none"></textarea>
+                                    <label for="message" 
+                                           class="absolute right-4 top-4 text-gray-400 transition-all duration-300 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-xs peer-focus:text-cyber-purple peer-valid:top-1 peer-valid:text-xs peer-valid:text-cyber-purple font-vazir"
+                                           data-key="contact.form.message">پیام شما</label>
+                                </div>
+                                
+                                <!-- Submit Button -->
+                                <button type="submit" 
+                                        class="w-full py-4 bg-gradient-to-r from-cyber-pink to-cyber-purple text-white font-bold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyber-pink/30 font-vazir"
+                                        data-key="contact.form.send">
+                                    <span class="flex items-center justify-center gap-2">
+                                        <span>ارسال پیام</span>
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p data-key="footer.copyright">© ۲۰۲۴ محمد حسن هاشمی. تمام حقوق محفوظ است.</p>
+
+    <footer class="relative bg-gradient-to-t from-dark-bg to-dark-card border-t border-cyber-blue/20 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-1/4 w-64 h-64 bg-cyber-blue/5 rounded-full blur-3xl"></div>
+            <div class="absolute top-0 right-1/4 w-48 h-48 bg-cyber-purple/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 py-12 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Copyright -->
+                <div class="text-center md:text-right">
+                    <p class="text-gray-300 font-vazir" data-key="footer.copyright">
+                        © ۲۰۲۵ محمد حسن هاشمی. طراحی و توسعه با 
+                        <span class="text-cyber-pink animate-pulse">❤️</span>
+                    </p>
+                    <p class="text-sm text-gray-500 mt-2">ساخته شده با Tailwind CSS و عشق به کدنویسی</p>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="flex gap-4">
+                    <a href="https://github.com/hassan-hashemi" target="_blank" rel="noopener noreferrer" 
+                       class="w-12 h-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center border border-gray-700 hover:border-cyber-blue hover:shadow-lg hover:shadow-cyber-blue/30 transition-all duration-300 hover:scale-110 group"
+                       aria-label="GitHub Profile">
+                        <svg class="w-6 h-6 text-gray-400 group-hover:text-cyber-blue transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/hassan-hashemi" target="_blank" rel="noopener noreferrer"
+                       class="w-12 h-12 bg-gradient-to-br from-blue-800 to-blue-900 rounded-full flex items-center justify-center border border-blue-700 hover:border-cyber-blue hover:shadow-lg hover:shadow-cyber-blue/30 transition-all duration-300 hover:scale-110 group"
+                       aria-label="LinkedIn Profile">
+                        <svg class="w-6 h-6 text-blue-400 group-hover:text-cyber-blue transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="mailto:hassanhashemi.pro@gmail.com"
+                       class="w-12 h-12 bg-gradient-to-br from-red-800 to-red-900 rounded-full flex items-center justify-center border border-red-700 hover:border-cyber-pink hover:shadow-lg hover:shadow-cyber-pink/30 transition-all duration-300 hover:scale-110 group"
+                       aria-label="Email">
+                        <svg class="w-6 h-6 text-red-400 group-hover:text-cyber-pink transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Decorative Line -->
+            <div class="mt-8 pt-8 border-t border-gray-800">
+                <div class="text-center">
+                    <div class="inline-flex items-center gap-2 text-sm text-gray-500">
+                        <span>Made with</span>
+                        <span class="text-cyber-blue">React</span>
+                        <span>•</span>
+                        <span class="text-cyber-green">Vue</span>
+                        <span>•</span>
+                        <span class="text-cyber-orange">Node.js</span>
+                        <span>•</span>
+                        <span class="text-cyber-purple">Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+    
 
-    <!-- Mobile Bottom Navigation -->
-    <div class="mobile-nav">
-        <button class="mobile-nav-btn" id="langToggleMobile">🌐</button>
-        <a href="#hero" class="mobile-nav-btn">🏠</a>
-        <button class="mobile-nav-btn" id="themeToggleMobile">🌙</button>
-    </div>
 
-    <!-- Language Modal for Mobile -->
-    <div class="lang-modal-overlay">
-        <div class="lang-modal">
-            <h3 data-key="lang.select">انتخاب زبان</h3>
-            <button class="lang-modal-btn" data-lang="fa">🇮🇷 فارسی</button>
-            <button class="lang-modal-btn" data-lang="en">🇺🇸 English</button>
-            <button class="lang-modal-btn" data-lang="ar">🇸🇦 العربية</button>
-            <button class="lang-modal-close" data-key="lang.close">بستن</button>
-        </div>
-    </div>
-
-    <script src="main.js"></script>
 </body>
 </html>

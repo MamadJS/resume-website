@@ -1,317 +1,318 @@
-const translations = {
-    fa: { 'nav.logo': 'MH', 'nav.home': 'خانه', 'nav.about': 'درباره من', 'nav.projects': 'پروژه‌ها', 'nav.experience': 'تجربیات', 'nav.contact': 'تماس', 'hero.name': 'محمد حسن هاشمی', 'hero.title': 'مهندس ارشد فول‌استک', 'hero.description': 'متخصص در React، Vue، Node.js، NestJS و NuxtJS', 'hero.contact': 'تماس با من', 'hero.linkedin': 'لینکدین', 'about.title': 'درباره من', 'about.description': 'من یک مهندس نرم‌افزار با بیش از ۵ سال تجربه در توسعه وب هستم. تخصص من در ساخت اپلیکیشن‌های مدرن و قابل اعتماد با استفاده از جدیدترین تکنولوژی‌ها است.', 'about.skills': 'مهارت‌های من', 'projects.title': 'پروژه‌های من', 'projects.demo': 'نمایش', 'projects.code': 'کد', 'projects.project1.title': 'پلتفرم تجارت الکترونیک', 'projects.project1.description': 'یک پلتفرم کامل تجارت الکترونیک با React و Node.js', 'projects.project2.title': 'داشبورد مدیریت', 'projects.project2.description': 'داشبورد مدیریت پیشرفته با Vue.js و NuxtJS', 'projects.project3.title': 'API مایکروسرویس', 'projects.project3.description': 'معماری مایکروسرویس با NestJS و Docker', 'experience.title': 'تجربیات کاری', 'experience.job1.date': '۲۰۲۲ - اکنون', 'experience.job1.title': 'مهندس ارشد فول‌استک', 'experience.job1.company': 'شرکت تکنولوژی پیشرو', 'experience.job1.description': 'رهبری تیم توسعه و طراحی معماری سیستم‌های پیچیده', 'experience.job2.date': '۲۰۲۰ - ۲۰۲۲', 'experience.job2.title': 'توسعه‌دهنده فول‌استک', 'experience.job2.company': 'استارتاپ نوآور', 'experience.job2.description': 'توسعه اپلیکیشن‌های وب مدرن با React و Node.js', 'experience.job3.date': '۲۰۱۹ - ۲۰۲۰', 'experience.job3.title': 'توسعه‌دهنده فرانت‌اند', 'experience.job3.company': 'آژانس دیجیتال', 'experience.job3.description': 'ساخت رابط کاربری واکنش‌گرا و تجربه کاربری بهینه', 'contact.title': 'تماس با من', 'contact.email.title': 'ایمیل', 'contact.phone.title': 'تلفن', 'contact.linkedin.title': 'لینکدین', 'contact.form.name': 'نام شما', 'contact.form.email': 'ایمیل شما', 'contact.form.message': 'پیام شما', 'contact.form.send': 'ارسال پیام', 'footer.copyright': '© ۲۰۲۴ محمد حسن هاشمی. تمام حقوق محفوظ است.', 'lang.select': 'انتخاب زبان', 'lang.close': 'بستن' },
-    en: { 'nav.logo': 'MH', 'nav.home': 'Home', 'nav.about': 'About', 'nav.projects': 'Projects', 'nav.experience': 'Experience', 'nav.contact': 'Contact', 'hero.name': 'Mohammad Hassan Hashemi', 'hero.title': 'Senior Full-Stack Engineer', 'hero.description': 'Specialized in React, Vue, Node.js, NestJS and NuxtJS', 'hero.contact': 'Contact Me', 'hero.linkedin': 'LinkedIn', 'about.title': 'About Me', 'about.description': 'I am a software engineer with over 5 years of experience in web development. My expertise lies in building modern and reliable applications using the latest technologies.', 'about.skills': 'My Skills', 'projects.title': 'My Projects', 'projects.demo': 'Demo', 'projects.code': 'Code', 'projects.project1.title': 'E-commerce Platform', 'projects.project1.description': 'A complete e-commerce platform built with React and Node.js', 'projects.project2.title': 'Management Dashboard', 'projects.project2.description': 'Advanced management dashboard with Vue.js and NuxtJS', 'projects.project3.title': 'Microservice API', 'projects.project3.description': 'Microservice architecture with NestJS and Docker', 'experience.title': 'Work Experience', 'experience.job1.date': '2022 - Present', 'experience.job1.title': 'Senior Full-Stack Engineer', 'experience.job1.company': 'Leading Technology Company', 'experience.job1.description': 'Leading development team and designing complex system architectures', 'experience.job2.date': '2020 - 2022', 'experience.job2.title': 'Full-Stack Developer', 'experience.job2.company': 'Innovative Startup', 'experience.job2.description': 'Developing modern web applications with React and Node.js', 'experience.job3.date': '2019 - 2020', 'experience.job3.title': 'Frontend Developer', 'experience.job3.company': 'Digital Agency', 'experience.job3.description': 'Building responsive user interfaces and optimal user experiences', 'contact.title': 'Contact Me', 'contact.email.title': 'Email', 'contact.phone.title': 'Phone', 'contact.linkedin.title': 'LinkedIn', 'contact.form.name': 'Your Name', 'contact.form.email': 'Your Email', 'contact.form.message': 'Your Message', 'contact.form.send': 'Send Message', 'footer.copyright': '© 2024 Mohammad Hassan Hashemi. All rights reserved.', 'lang.select': 'Select Language', 'lang.close': 'Close' },
-    ar: { 'nav.logo': 'MH', 'nav.home': 'الرئيسية', 'nav.about': 'نبذة عني', 'nav.projects': 'المشاريع', 'nav.experience': 'الخبرات', 'nav.contact': 'اتصل بي', 'hero.name': 'محمد حسن هاشمي', 'hero.title': 'مهندس برمجيات أول', 'hero.description': 'متخصص في React و Vue و Node.js و NestJS و NuxtJS', 'hero.contact': 'اتصل بي', 'hero.linkedin': 'لينكد إن', 'about.title': 'نبذة عني', 'about.description': 'أنا مهندس برمجيات لدي أكثر من 5 سنوات من الخبرة في تطوير الويب. خبرتي تكمن في بناء تطبيقات حديثة وموثوقة باستخدام أحدث التقنيات.', 'about.skills': 'مهاراتي', 'projects.title': 'مشاريعي', 'projects.demo': 'عرض', 'projects.code': 'الكود', 'projects.project1.title': 'منصة التجارة الإلكترونية', 'projects.project1.description': 'منصة تجارة إلكترونية كاملة مبنية بـ React و Node.js', 'projects.project2.title': 'لوحة تحكم الإدارة', 'projects.project2.description': 'لوحة تحكم إدارة متقدمة مع Vue.js و NuxtJS', 'projects.project3.title': 'واجهة برمجة التطبيقات المصغرة', 'projects.project3.description': 'معمارية الخدمات المصغرة مع NestJS و Docker', 'experience.title': 'الخبرة العملية', 'experience.job1.date': '2022 - الحاضر', 'experience.job1.title': 'مهندس برمجيات أول', 'experience.job1.company': 'شركة التكنولوجيا الرائدة', 'experience.job1.description': 'قيادة فريق التطوير وتصميم معماريات الأنظمة المعقدة', 'experience.job2.date': '2020 - 2022', 'experience.job2.title': 'مطور برمجيات شامل', 'experience.job2.company': 'شركة ناشئة مبتكرة', 'experience.job2.description': 'تطوير تطبيقات ويب حديثة مع React و Node.js', 'experience.job3.date': '2019 - 2020', 'experience.job3.title': 'مطور واجهة أمامية', 'experience.job3.company': 'وكالة رقمية', 'experience.job3.description': 'بناء واجهات مستخدم متجاوبة وتجارب مستخدم مثلى', 'contact.title': 'اتصل بي', 'contact.email.title': 'البريد الإلكتروني', 'contact.phone.title': 'الهاتف', 'contact.linkedin.title': 'لينكد إن', 'contact.form.name': 'اسمك', 'contact.form.email': 'بريدك الإلكتروني', 'contact.form.message': 'رسالتك', 'contact.form.send': 'إرسال الرسالة', 'footer.copyright': '© 2024 محمد حسن هاشمي. جميع الحقوق محفوظة.', 'lang.select': 'اختر اللغة', 'lang.close': 'إغلاق' }
-};
+/*
+    MAIN.JS - Final Version
+    - Fixed preloader logic, added loading bar
+    - Added dynamic, icon-based skills section
+    - Cleaned up and well-commented code
+*/
 
-class PortfolioApp {
-    constructor() {
-        this.state = {
-            currentLang: 'fa',
-            currentTheme: 'dark',
-            isTyping: false,
-            prefersReducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        };
+const app = {
+    // --- STATE & CONFIG ---
+    config: {
+        currentLang: 'fa',
+        isMenuOpen: false,
+        isTouchDevice: 'ontouchstart' in window || navigator.maxTouchPoints > 0,
+        lastScrollY: window.scrollY,
+        isScrolling: null,
+        skills: [
+            { name: 'React', icon: 'react' },
+            { name: 'Vue.js', icon: 'vuedotjs' },
+            { name: 'Node.js', icon: 'nodedotjs' },
+            { name: 'NestJS', icon: 'nestjs' },
+            { name: 'Nuxt.js', icon: 'nuxtdotjs' },
+            { name: 'TypeScript', icon: 'typescript' },
+        ]
+    },
 
-        this.init();
-    }
+    // --- TRANSLATIONS ---
+    translations: {
+        fa: {'meta.title':'محمد حسن هاشمی - مهندس ارشد فول‌استک','name':'محمد حسن هاشمی','title':'مهندس ارشد فول‌استک','subtitle':'ساخت اپلیکیشن‌های وب سریع و مقیاس‌پذیر | آماده همکاری ریموت و فریلنسری','nav.logo':'MH','nav.about':'درباره من','nav.projects':'پروژه‌ها','nav.experience':'تجربه','nav.contact':'تماس','hero.greeting':'سلام، من','hero.contactBtn':'تماس با من','hero.resumeBtn':'دانلود رزومه','about.title':'درباره من','about.description':'یک مهندس فول‌استک با اشتیاق فراوان برای ساخت وب‌اپلیکیشن‌های سریع، مقیاس‌پذیر و کاربرپسند. با تخصص عمیق در اکوسیستم جاوااسکریپت، از جمله React، Vue و Node.js، همواره به دنبال ارائه کدی با کیفیت و خلق تجربیات دیجیتال بی‌نظیر برای کاربران هستم.','about.skillsTitle':'مهارت‌های کلیدی','projects.title':'پروژه‌های منتخب','projects.live':'مشاهده دمو','projects.code':'کد منبع','projects.p1.title':'پلتفرم تجارت الکترونیک','projects.p1.desc':'یک پلتفرم کامل با React و NestJS برای فروش آنلاین.','projects.p2.title':'داشبورد آنالیتیکس','projects.p2.desc':'داشبورد مدیریت و تحلیل داده با Vue 3 و Nuxt.js.','projects.p3.title':'API میکروسرویس','projects.p3.desc':'معماری میکروسرویس قدرتمند با Node.js و Docker.','experience.title':'سوابق کاری و تحصیلی','experience.e1.date':'۲۰۲۲ - تاکنون','experience.e1.title':'مهندس ارشد فول‌استک','experience.e1.company':'شرکت فناوری پیشرو','experience.e2.date':'۲۰۲۰ - ۲۰۲۲','experience.e2.title':'توسعه‌دهنده فول‌استک','experience.e2.company':'استارتاپ نوآور','experience.e3.date':'۲۰۱۶ - ۲۰۲۰','experience.e3.title':'کارشناسی مهندسی نرم‌افزار','experience.e3.company':'دانشگاه صنعتی شریف','contact.title':'در تماس باشید','contact.text':'از همکاری در پروژه‌های هیجان‌انگیز یا یک گفتگوی ساده در مورد تکنولوژی استقبال می‌کنم. از طریق فرم یا راه‌های زیر با من در ارتباط باشید.','contact.form.name':'نام','contact.form.email':'ایمیل','contact.form.message':'پیام شما','contact.form.send':'ارسال پیام','footer.copyright':'© ۲۰۲۵ محمد حسن هاشمی. طراحی و توسعه با ❤️.',},
+        en: {'meta.title':'Mohammad Hassan Hashemi - Senior Full-Stack Engineer','name':'Mohammad Hassan Hashemi','title':'Senior Full-Stack Engineer','subtitle':'Building Fast & Scalable Web Apps | Remote-Friendly & Freelance Ready','nav.logo':'MH','nav.about':'About','nav.projects':'Projects','nav.experience':'Experience','nav.contact':'Contact','hero.greeting':"Hello, I'm",'hero.contactBtn':'Contact Me','hero.resumeBtn':'Download CV','about.title':'About Me','about.description':'A passionate Full-Stack Engineer with a strong focus on creating high-performance, scalable, and user-friendly web applications. With expertise in the JavaScript ecosystem, including React, Vue, and Node.js, I am dedicated to delivering quality code and exceptional user experiences.','about.skillsTitle':'Key Skills','projects.title':'Selected Projects','projects.live':'Live Demo','projects.code':'Source Code','projects.p1.title':'E-commerce Platform','projects.p1.desc':'A complete platform with React and NestJS for online sales.','projects.p2.title':'Analytics Dashboard','projects.p2.desc':'Management and data analysis dashboard with Vue 3 and Nuxt.js.','projects.p3.title':'Microservice API','projects.p3.desc':'Powerful microservice architecture with Node.js and Docker.','experience.title':'Work & Education','experience.e1.date':'2022 - Present','experience.e1.title':'Senior Full-Stack Engineer','experience.e1.company':'Leading Tech Company','experience.e2.date':'2020 - 2022','experience.e2.title':'Full-Stack Developer','experience.e2.company':'Innovative Startup','experience.e3.date':'2016 - 2020','experience.e3.title':'B.Sc. in Software Engineering','experience.e3.company':'Sharif University of Technology','contact.title':'Get In Touch','contact.text':"I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out to me using the form or other contact methods.",'contact.form.name':'Name','contact.form.email':'Email','contact.form.message':'Your Message','contact.form.send':'Send Message','footer.copyright':'© 2025 Mohammad Hassan Hashemi. Coded with ❤️.',},
+        ar: {'meta.title':'محمد حسن هاشمي - مهندس برمجيات أول','name':'محمد حسن هاشمي','title':'مهندس برمجيات أول','subtitle':'بناء تطبيقات ويب سريعة وقابلة للتطوير | جاهز للعمل عن بعد والمستقل','nav.logo':'MH','nav.about':'عني','nav.projects':'المشاريع','nav.experience':'الخبرة','nav.contact':'اتصل','hero.greeting':'مرحباً، أنا','hero.contactBtn':'اتصل بي','hero.resumeBtn':'تحميل السيرة الذاتية','about.title':'نبذة عني','about.description':'مهندس برمجيات شغوف أركز بشدة على إنشاء تطبيقات ويب عالية الأداء وقابلة للتطوير وسهلة الاستخدام. بفضل خبرتي في نظام JavaScript، بما في ذلك React و Vue و Node.js، أنا ملتزم بتقديم كود عالي الجودة وتجارب مستخدم استثنائية.','about.skillsTitle':'المهارات الرئيسية','projects.title':'مشاريع مختارة','projects.live':'عرض مباشر','projects.code':'الكود المصدري','projects.p1.title':'منصة التجارة الإلكترونية','projects.p1.desc':'منصة كاملة باستخدام React و NestJS للمبيعات عبر الإنترنت.','projects.p2.title':'لوحة تحكم التحليلات','projects.p2.desc':'لوحة تحكم لإدارة وتحليل البيانات باستخدام Vue 3 و Nuxt.js.','projects.p3.title':'واجهة برمجة تطبيقات الخدمات المصغرة','projects.p3.desc':'بنية خدمات مصغرة قوية باستخدام Node.js و Docker.','experience.title':'الخبرة والتعليم','experience.e1.date':'2022 - حتى الآن','experience.e1.title':'مهندس برمجيات أول','experience.e1.company':'شركة تكنولوجيا رائدة','experience.e2.date':'2020 - 2022','experience.e2.title':'مطور برمجيات متكامل','experience.e2.company':'شركة ناشئة مبتكرة','experience.e3.date':'2016 - 2020','experience.e3.title':'بكالوريوس في هندسة البرمجيات','experience.e3.company':'جامعة شريف للتكنولوجيا','contact.title':'تواصل معي','contact.text':'أنا منفتح دائمًا لمناقشة المشاريع الجديدة أو الأفكار الإبداعية أو الفرص. لا تتردد في التواصل معي باستخدام النموذج أو طرق الاتصال الأخرى.','contact.form.name':'الاسم','contact.form.email':'البريد الإلكتروني','contact.form.message':'رسالتك','contact.form.send':'إرسال الرسالة','footer.copyright':'© 2025 محمد حسن هاشمي. تمت البرمجة بـ ❤️.',},
+    },
 
+    // --- DOM ELEMENTS ---
+    elements: {},
+
+    // --- INITIALIZATION ---
     init() {
-        this._setupPreloader();
-        this._setupTheme();
-        this._setupLanguage();
-        if (!this.state.prefersReducedMotion) {
-            this._setupCustomCursor();
-            this._setupProjectCardTilt();
-            this._setupParticles();
+        this.cacheDOMElements();
+        this.setupPreloader();
+        this.bindEvents();
+        this.setupScrollAnimations();
+        this.setupTheme();
+        this.setupLanguage();
+        this.renderSkills();
+
+        if (!this.config.isTouchDevice) {
+            this.setupCustomCursor();
         }
-        this._setupNavigation();
-        this._setupScrollAnimations();
-        this._setupContactForm();
-        this._setupFloatingLabels();
-    }
+    },
 
-    _setupPreloader() {
-        const preloader = document.querySelector('.preloader');
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                preloader.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-                this._startTypingAnimation();
-            }, 1000);
-             setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 1500);
-        });
-    }
+    cacheDOMElements() {
+        this.elements = {
+            html: document.documentElement,
+            body: document.body,
+            preloader: document.getElementById('preloader'),
+            preloaderText: document.getElementById('preloader-text'),
+            header: document.querySelector('header'),
+            mobileMenuToggle: document.getElementById('mobileMenuToggle'),
+            mobileMenu: document.getElementById('mobileMenu'),
+            themeToggle: document.getElementById('themeToggle'),
+            mobileThemeToggle: document.getElementById('mobileThemeToggle'),
+            languageSelector: document.getElementById('languageSelector'),
+            mobileLangSelector: document.getElementById('mobileLangSelector'),
 
-    _setupTheme() {
-        this.state.currentTheme = localStorage.getItem('theme') || 'dark';
-        document.body.setAttribute('data-theme', this.state.currentTheme);
+            cursor: document.querySelector('.cursor'),
+            typingText: document.querySelector('.typing-text'),
+            skillsGrid: document.querySelector('.skills-grid-v2'),
+        };
+    },
 
-        const themeToggles = [document.getElementById('themeToggleDesktop'), document.getElementById('themeToggleMobile')];
+    // --- PRELOADER LOGIC ---
+    setupPreloader() {
+        // This sets up the logic that will hide the preloader
+        const hidePreloader = () => {
+            this.elements.preloader.classList.add('hidden');
+            this.elements.body.classList.add('loaded'); // Show content
+        };
+
+        // This starts the preloader's visual animations
+        const startPreloaderAnimation = () => {
+            this.elements.preloader.classList.add('loading');
+        };
         
-        themeToggles.forEach(toggle => {
-            if(toggle) {
-                toggle.addEventListener('click', () => {
-                    this.state.currentTheme = this.state.currentTheme === 'dark' ? 'light' : 'dark';
-                    document.body.setAttribute('data-theme', this.state.currentTheme);
-                    localStorage.setItem('theme', this.state.currentTheme);
-                    this._updateThemeIcons();
+        // Use a Promise to ensure minimum display time for the animation
+        const minDisplayTime = new Promise(resolve => setTimeout(resolve, 2000));
+        
+        // Use a Promise to wait for the window to be fully loaded
+        const pageLoaded = new Promise(resolve => {
+            window.addEventListener('load', resolve);
+        });
+
+        startPreloaderAnimation();
+
+        // Once the page is loaded AND the minimum time has passed, hide the preloader
+        Promise.all([pageLoaded, minDisplayTime]).then(hidePreloader);
+    },
+
+    // --- DYNAMIC SKILLS SECTION ---
+    renderSkills() {
+        if (!this.elements.skillsGrid) return;
+        
+        this.elements.skillsGrid.innerHTML = this.config.skills.map(skill => `
+            <div class="group relative p-4 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl border border-gray-700/50 hover:border-cyber-blue/40 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyber-blue/20">
+                <div class="flex flex-col items-center gap-3">
+                    <div class="w-12 h-12 bg-cyber-blue/10 rounded-lg flex items-center justify-center group-hover:bg-cyber-blue/20 transition-colors">
+                        <img src="https://cdn.simpleicons.org/${skill.icon}/" alt="${skill.name}" class="w-8 h-8 filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity" loading="lazy">
+                    </div>
+                    <span class="text-sm font-medium text-gray-300 group-hover:text-cyber-blue transition-colors">${skill.name}</span>
+                </div>
+            </div>
+        `).join('');
+    },
+
+    // --- EVENT BINDING ---
+    bindEvents() {
+        window.addEventListener('scroll', () => {
+            this.config.lastScrollY = window.scrollY;
+            if (!this.config.isScrolling) {
+                window.requestAnimationFrame(() => {
+                    this.handleScroll();
+                    this.config.isScrolling = false;
                 });
+                this.config.isScrolling = true;
             }
-        });
-        this._updateThemeIcons();
-    }
-    
-    _updateThemeIcons() {
-        const themeIcons = document.querySelectorAll('.theme-icon, #themeToggleMobile');
-        const icon = this.state.currentTheme === 'dark' ? '☀️' : '🌙';
-        themeIcons.forEach(el => el.textContent = icon);
-    }
-    
-    _setupLanguage() {
-        // Desktop
-        const langMenuToggle = document.querySelector('.lang-menu-toggle');
-        const langMenu = document.querySelector('.lang-menu');
-        langMenuToggle.addEventListener('click', () => langMenu.classList.toggle('active'));
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.language-switcher')) {
-                langMenu.classList.remove('active');
-            }
-        });
-        document.querySelectorAll('.language-switcher .lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => this._changeLanguage(btn.dataset.lang));
-        });
+        }, { passive: true });
 
-        // Mobile
-        const langToggleMobile = document.getElementById('langToggleMobile');
-        const langModalOverlay = document.querySelector('.lang-modal-overlay');
-        const langModalClose = document.querySelector('.lang-modal-close');
+        // Mobile menu toggle
+        if (this.elements.mobileMenuToggle) {
+            this.elements.mobileMenuToggle.addEventListener('click', () => this.toggleMobileMenu());
+        }
 
-        langToggleMobile.addEventListener('click', () => langModalOverlay.classList.add('active'));
-        langModalClose.addEventListener('click', () => langModalOverlay.classList.remove('active'));
-        langModalOverlay.addEventListener('click', (e) => {
-            if (e.target === langModalOverlay) langModalOverlay.classList.remove('active');
-        });
-        document.querySelectorAll('.lang-modal-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                this._changeLanguage(btn.dataset.lang);
-                langModalOverlay.classList.remove('active');
-            });
-        });
+        // Theme toggles
+        if (this.elements.themeToggle) {
+            this.elements.themeToggle.addEventListener('click', () => this.toggleTheme());
+        }
+        if (this.elements.mobileThemeToggle) {
+            this.elements.mobileThemeToggle.addEventListener('click', () => this.toggleTheme());
+        }
 
-        this._changeLanguage(this.state.currentLang);
-    }
+        // Language selectors
+        if (this.elements.languageSelector) {
+            this.elements.languageSelector.addEventListener('change', (e) => this.changeLanguage(e.target.value));
+        }
+        if (this.elements.mobileLangSelector) {
+            this.elements.mobileLangSelector.addEventListener('change', (e) => this.changeLanguage(e.target.value));
+        }
 
-    _changeLanguage(lang) {
-        if (!translations[lang]) return;
-        this.state.currentLang = lang;
-        const html = document.documentElement;
-        html.setAttribute('lang', lang);
-        html.setAttribute('dir', ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr');
 
-        document.querySelectorAll('[data-key]').forEach(element => {
-            const key = element.dataset.key;
-            const translation = translations[lang][key];
-            if (translation !== undefined) {
-                if (element.classList.contains('typing-text')) {
-                    // Handled by _startTypingAnimation
-                } else if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.placeholder = translation;
-                } else {
-                    element.innerHTML = translation;
-                }
-            }
-        });
         
-        this._updateActiveLangButtons(lang);
-        this._startTypingAnimation();
-    }
-    
-    _updateActiveLangButtons(lang) {
-        document.querySelectorAll('.lang-btn, .lang-modal-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
-    }
-
-    _startTypingAnimation() {
-        const el = document.querySelector('.typing-text');
-        if (!el || this.state.isTyping) return;
-
-        const text = translations[this.state.currentLang]['hero.name'];
-        el.textContent = '';
-        el.style.width = '0';
-        
-        this.state.isTyping = true;
-        let i = 0;
-        
-        const type = () => {
-            if (i < text.length) {
-                el.textContent += text.charAt(i);
-                i++;
-                setTimeout(type, 100);
-            } else {
-                el.style.width = ''; // Let it be auto
-                this.state.isTyping = false;
-            }
-        };
-        setTimeout(type, 500);
-    }
-
-    _setupCustomCursor() {
-        const cursor = document.querySelector('.cursor');
-        const follower = document.querySelector('.cursor-follower');
-        let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
-
-        document.addEventListener('mousemove', e => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        const animateFollower = () => {
-            followerX += (mouseX - followerX) * 0.1;
-            followerY += (mouseY - followerY) * 0.1;
-            cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-            follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0)`;
-            requestAnimationFrame(animateFollower);
-        };
-        animateFollower();
-        
-        document.querySelectorAll('a, button, .project-card').forEach(el => {
-            el.addEventListener('mouseenter', () => follower.classList.add('active'));
-            el.addEventListener('mouseleave', () => follower.classList.remove('active'));
-        });
-    }
-
-    _setupNavigation() {
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-btn[href]');
-        const navbar = document.querySelector('.navbar');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            document.body.classList.toggle('no-scroll');
-        });
-
-        navLinks.forEach(link => {
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.classList.remove('no-scroll');
+                if(this.config.isMenuOpen) this.toggleMobileMenu();
             });
         });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (this.config.isMenuOpen && !this.elements.mobileMenu.contains(e.target) && !this.elements.mobileMenuToggle.contains(e.target)) {
+                this.toggleMobileMenu();
+            }
+        });
+    },
+
+    // --- CORE FEATURES ---
+    handleScroll() {
+        const scrollY = this.config.lastScrollY;
+        this.elements.header.classList.toggle('scrolled', scrollY > 50);
+    },
+
+    toggleMobileMenu() {
+        this.config.isMenuOpen = !this.config.isMenuOpen;
         
-        // Active link highlighting
-        const sections = document.querySelectorAll('section[id]');
+        if (this.elements.mobileMenuToggle) {
+            this.elements.mobileMenuToggle.classList.toggle('active', this.config.isMenuOpen);
+        }
+        
+        if (this.elements.mobileMenu) {
+            this.elements.mobileMenu.classList.toggle('active', this.config.isMenuOpen);
+        }
+        
+        this.elements.body.style.overflow = this.config.isMenuOpen ? 'hidden' : '';
+    },
+    
+    setupTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        this.elements.html.setAttribute('data-theme', savedTheme);
+        
+        // Initialize theme toggle UI
+        setTimeout(() => {
+            this.updateThemeToggleUI(savedTheme);
+        }, 100);
+    },
+    
+    toggleTheme() {
+        const currentTheme = this.elements.html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        this.elements.html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Update theme toggle UI
+        this.updateThemeToggleUI(newTheme);
+    },
+    
+    updateThemeToggleUI(theme) {
+        const isLight = theme === 'light';
+        
+        // Desktop theme toggle
+        const desktopBall = document.querySelector('.theme-toggle-ball');
+        const desktopMoon = document.querySelector('.theme-icon-moon');
+        const desktopSun = document.querySelector('.theme-icon-sun');
+        
+        if (desktopBall) {
+            desktopBall.style.transform = isLight ? 'translateX(32px)' : 'translateX(0)';
+            desktopBall.style.background = isLight ? '#fbbf24' : '#ffffff';
+        }
+        
+        if (desktopMoon && desktopSun) {
+            desktopMoon.classList.toggle('hidden', isLight);
+            desktopSun.classList.toggle('hidden', !isLight);
+        }
+        
+        // Mobile theme toggle
+        const mobileBall = document.querySelector('.mobile-theme-toggle-ball');
+        const mobileMoon = document.querySelector('.mobile-theme-icon-moon');
+        const mobileSun = document.querySelector('.mobile-theme-icon-sun');
+        
+        if (mobileBall) {
+            mobileBall.style.transform = isLight ? 'translateX(32px)' : 'translateX(0)';
+            mobileBall.style.background = isLight ? '#fbbf24' : '#ffffff';
+        }
+        
+        if (mobileMoon && mobileSun) {
+            mobileMoon.classList.toggle('hidden', isLight);
+            mobileSun.classList.toggle('hidden', !isLight);
+        }
+    },
+    
+    setupLanguage() {
+        const savedLang = localStorage.getItem('language') || 'fa';
+        this.changeLanguage(savedLang);
+    },
+
+    changeLanguage(lang) {
+        this.config.currentLang = lang;
+        localStorage.setItem('language', lang);
+        
+        // Sync both language selectors
+        if (this.elements.languageSelector) {
+            this.elements.languageSelector.value = lang;
+        }
+        if (this.elements.mobileLangSelector) {
+            this.elements.mobileLangSelector.value = lang;
+        }
+        
+        const isRTL = lang === 'fa' || lang === 'ar';
+        this.elements.html.setAttribute('lang', lang);
+        this.elements.html.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+        
+        const fontMap = { fa: 'var(--font-fa)', en: 'var(--font-en)', ar: 'var(--font-ar)' };
+        this.elements.body.style.fontFamily = fontMap[lang];
+
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (el.classList.contains('typing-text')) return;
+            el.textContent = this.translations[lang]?.[key] || key;
+        });
+        
+        this.startTypingAnimation();
+    },
+    
+    startTypingAnimation() {
+        if (!this.elements.typingText) return;
+        
+        const text = this.translations[this.config.currentLang]['title'];
+        let i = 0;
+        this.elements.typingText.innerHTML = '';
+        
+        if (this.typingInterval) clearInterval(this.typingInterval);
+        
+        this.typingInterval = setInterval(() => {
+            if (i < text.length) {
+                this.elements.typingText.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(this.typingInterval);
+            }
+        }, 100);
+    },
+    
+    setupCustomCursor() {
+        this.elements.cursor.style.display = 'block';
+        window.addEventListener('mousemove', e => {
+            this.elements.cursor.style.left = e.clientX + 'px';
+            this.elements.cursor.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, button, .skill-card, input, textarea, select').forEach(el => {
+            el.addEventListener('mouseenter', () => this.elements.cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => this.elements.cursor.classList.remove('hovered'));
+        });
+    },
+
+    setupScrollAnimations() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
-                    });
-                }
-            });
-        }, { rootMargin: '-50% 0px -50% 0px'});
-        sections.forEach(sec => observer.observe(sec));
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
-    }
-    
-    _setupScrollAnimations() {
-        const elements = document.querySelectorAll('.section-header, .about-content > *, .project-card, .timeline-item, .contact-info > *, .contact-form');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                    observer.unobserve(entry.target);
+                    entry.target.classList.add('is-visible');
                 }
             });
         }, { threshold: 0.1 });
-        elements.forEach(el => observer.observe(el));
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     }
-    
-    _setupProjectCardTilt() {
-        const cards = document.querySelectorAll('.project-card');
-        cards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const { width, height } = rect;
-                const rotateX = (y / height - 0.5) * -20;
-                const rotateY = (x / width - 0.5) * 20;
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-            });
-        });
-    }
+};
 
-    _setupContactForm() {
-        const form = document.getElementById('contactForm');
-        const statusEl = form.querySelector('.form-status');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const submitBtn = form.querySelector('.submit-btn');
-            submitBtn.classList.add('loading');
-            
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1500));
-
-            submitBtn.classList.remove('loading');
-            form.reset();
-            document.querySelectorAll('.form-group label.focused').forEach(l => l.classList.remove('focused'));
-
-            statusEl.textContent = this.state.currentLang === 'fa' ? 'پیام شما با موفقیت ارسال شد!' : 'Your message has been sent successfully!';
-            statusEl.classList.add('success');
-            
-            setTimeout(() => {
-                statusEl.textContent = '';
-                statusEl.classList.remove('success');
-            }, 5000);
-        });
-    }
-
-    _setupFloatingLabels() {
-        document.querySelectorAll('.form-group').forEach(group => {
-            const input = group.querySelector('input, textarea');
-            const label = group.querySelector('label');
-            input.addEventListener('focus', () => label.classList.add('focused'));
-            input.addEventListener('blur', () => {
-                if (input.value === '') label.classList.remove('focused');
-            });
-        });
-    }
-    
-    _setupParticles() {
-        const container = document.querySelector('.particles-bg');
-        if (!container) return;
-        const particleCount = 20;
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            const size = Math.random() * 3 + 1;
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.left = `${Math.random() * 100}%`;
-            particle.style.animationDelay = `${Math.random() * 10}s`;
-            particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
-            container.appendChild(particle);
-        }
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    new PortfolioApp();
-});
+// --- Run Application ---
+document.addEventListener('DOMContentLoaded', () => app.init());
