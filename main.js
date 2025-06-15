@@ -268,11 +268,16 @@ function changeLanguage(lang) {
     html.setAttribute('lang', lang);
     html.setAttribute('dir', lang === 'ar' || lang === 'fa' ? 'rtl' : 'ltr');
     
-    // Update all translatable elements
+    // Update all translatable elements except typing text
     const elements = document.querySelectorAll('[data-key]');
     elements.forEach(element => {
         const key = element.getAttribute('data-key');
         if (translations[lang] && translations[lang][key]) {
+            // Skip typing text element to avoid duplication
+            if (element.classList.contains('typing-text')) {
+                return;
+            }
+            
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translations[lang][key];
             } else {
