@@ -162,6 +162,7 @@ function initializeApp() {
     setupSkillBars();
     setupContactForm();
     setupTypingAnimation();
+    setupLanguageScrollEffect();
     
     // Set initial language
     changeLanguage(currentLang);
@@ -802,9 +803,204 @@ function handleProfileImageError() {
     }
 }
 
+// Language Scroll Effect
+function setupLanguageScrollEffect() {
+    const languageSwitcher = document.querySelector('.language-switcher');
+    if (!languageSwitcher) return;
+    
+    let lastScrollY = window.scrollY;
+    let scrollTimeout;
+    
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+        const scrollDifference = currentScrollY - lastScrollY;
+        
+        // Clear existing classes
+        languageSwitcher.classList.remove('scroll-up', 'scroll-down');
+        
+        // Add appropriate class based on scroll direction
+        if (scrollDifference > 0) {
+            languageSwitcher.classList.add('scroll-down');
+        } else if (scrollDifference < 0) {
+            languageSwitcher.classList.add('scroll-up');
+        }
+        
+        // Clear scroll effect after a delay
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            languageSwitcher.classList.remove('scroll-up', 'scroll-down');
+        }, 1000);
+        
+        lastScrollY = currentScrollY;
+    }
+    
+    // Throttled scroll listener
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+}
+
+// Programming Code Background
+function createCodeBackground() {
+    const codeBackground = document.getElementById('codeBackground');
+    if (!codeBackground) return;
+    
+    const codeSnippets = [
+        // React Code
+        '<span class="keyword">const</span> <span class="function">App</span> = <span class="bracket">()</span> <span class="operator">=></span> <span class="bracket">{</span>',
+        '  <span class="keyword">const</span> <span class="bracket">[</span><span class="variable">state</span>, <span class="variable">setState</span><span class="bracket">]</span> = <span class="function">useState</span><span class="bracket">(</span><span class="string">\'initial\'</span><span class="bracket">)</span>;',
+        '  <span class="keyword">return</span> <span class="bracket">(</span>',
+        '    <span class="operator">&lt;</span><span class="function">div</span> <span class="variable">className</span>=<span class="string">"container"</span><span class="operator">&gt;</span>',
+        '      <span class="operator">&lt;</span><span class="function">h1</span><span class="operator">&gt;</span><span class="bracket">{</span><span class="variable">state</span><span class="bracket">}</span><span class="operator">&lt;/</span><span class="function">h1</span><span class="operator">&gt;</span>',
+        '    <span class="operator">&lt;/</span><span class="function">div</span><span class="operator">&gt;</span>',
+        '  <span class="bracket">)</span>;',
+        '<span class="bracket">}</span>;',
+        
+        // Vue Code
+        '<span class="keyword">export</span> <span class="keyword">default</span> <span class="bracket">{</span>',
+        '  <span class="variable">name</span>: <span class="string">\'MyComponent\'</span>,',
+        '  <span class="function">data</span><span class="bracket">()</span> <span class="bracket">{</span>',
+        '    <span class="keyword">return</span> <span class="bracket">{</span>',
+        '      <span class="variable">message</span>: <span class="string">\'Hello Vue!\'</span>,',
+        '      <span class="variable">count</span>: <span class="number">0</span>',
+        '    <span class="bracket">}</span>',
+        '  <span class="bracket">}</span>,',
+        '  <span class="variable">methods</span>: <span class="bracket">{</span>',
+        '    <span class="function">increment</span><span class="bracket">()</span> <span class="bracket">{</span>',
+        '      <span class="keyword">this</span>.<span class="variable">count</span><span class="operator">++</span>;',
+        '    <span class="bracket">}</span>',
+        '  <span class="bracket">}</span>',
+        '<span class="bracket">}</span>',
+        
+        // Node.js Code
+        '<span class="keyword">const</span> <span class="variable">express</span> = <span class="function">require</span><span class="bracket">(</span><span class="string">\'express\'</span><span class="bracket">)</span>;',
+        '<span class="keyword">const</span> <span class="variable">app</span> = <span class="function">express</span><span class="bracket">()</span>;',
+        '',
+        '<span class="variable">app</span>.<span class="function">get</span><span class="bracket">(</span><span class="string">\'/api/users\'</span>, <span class="keyword">async</span> <span class="bracket">(</span><span class="variable">req</span>, <span class="variable">res</span><span class="bracket">)</span> <span class="operator">=></span> <span class="bracket">{</span>',
+        '  <span class="keyword">try</span> <span class="bracket">{</span>',
+        '    <span class="keyword">const</span> <span class="variable">users</span> = <span class="keyword">await</span> <span class="function">User</span>.<span class="function">find</span><span class="bracket">()</span>;',
+        '    <span class="variable">res</span>.<span class="function">json</span><span class="bracket">(</span><span class="variable">users</span><span class="bracket">)</span>;',
+        '  <span class="bracket">}</span> <span class="keyword">catch</span> <span class="bracket">(</span><span class="variable">error</span><span class="bracket">)</span> <span class="bracket">{</span>',
+        '    <span class="variable">res</span>.<span class="function">status</span><span class="bracket">(</span><span class="number">500</span><span class="bracket">)</span>.<span class="function">json</span><span class="bracket">(</span><span class="bracket">{</span> <span class="variable">error</span>: <span class="variable">error</span>.<span class="variable">message</span> <span class="bracket">}</span><span class="bracket">)</span>;',
+        '  <span class="bracket">}</span>',
+        '<span class="bracket">}</span><span class="bracket">)</span>;',
+        '',
+        '<span class="variable">app</span>.<span class="function">listen</span><span class="bracket">(</span><span class="number">3000</span>, <span class="bracket">()</span> <span class="operator">=></span> <span class="bracket">{</span>',
+        '  <span class="variable">console</span>.<span class="function">log</span><span class="bracket">(</span><span class="string">\'Server running on port 3000\'</span><span class="bracket">)</span>;',
+        '<span class="bracket">}</span><span class="bracket">)</span>;',
+        
+        // NestJS Code
+        '<span class="keyword">import</span> <span class="bracket">{</span> <span class="function">Controller</span>, <span class="function">Get</span>, <span class="function">Post</span>, <span class="function">Body</span> <span class="bracket">}</span> <span class="keyword">from</span> <span class="string">\'@nestjs/common\'</span>;',
+        '',
+        '<span class="keyword">@</span><span class="function">Controller</span><span class="bracket">(</span><span class="string">\'users\'</span><span class="bracket">)</span>',
+        '<span class="keyword">export</span> <span class="keyword">class</span> <span class="function">UsersController</span> <span class="bracket">{</span>',
+        '  <span class="keyword">constructor</span><span class="bracket">(</span><span class="keyword">private</span> <span class="keyword">readonly</span> <span class="variable">usersService</span>: <span class="function">UsersService</span><span class="bracket">)</span> <span class="bracket">{}</span>',
+        '',
+        '  <span class="keyword">@</span><span class="function">Get</span><span class="bracket">()</span>',
+        '  <span class="keyword">async</span> <span class="function">findAll</span><span class="bracket">()</span>: <span class="function">Promise</span><span class="operator">&lt;</span><span class="function">User</span><span class="bracket">[]</span><span class="operator">&gt;</span> <span class="bracket">{</span>',
+        '    <span class="keyword">return</span> <span class="keyword">await</span> <span class="keyword">this</span>.<span class="variable">usersService</span>.<span class="function">findAll</span><span class="bracket">()</span>;',
+        '  <span class="bracket">}</span>',
+        '',
+        '  <span class="keyword">@</span><span class="function">Post</span><span class="bracket">()</span>',
+        '  <span class="keyword">async</span> <span class="function">create</span><span class="bracket">(</span><span class="keyword">@</span><span class="function">Body</span><span class="bracket">()</span> <span class="variable">createUserDto</span>: <span class="function">CreateUserDto</span><span class="bracket">)</span> <span class="bracket">{</span>',
+        '    <span class="keyword">return</span> <span class="keyword">await</span> <span class="keyword">this</span>.<span class="variable">usersService</span>.<span class="function">create</span><span class="bracket">(</span><span class="variable">createUserDto</span><span class="bracket">)</span>;',
+        '  <span class="bracket">}</span>',
+        '<span class="bracket">}</span>',
+        
+        // CSS Code
+        '<span class="variable">.container</span> <span class="bracket">{</span>',
+        '  <span class="variable">display</span>: <span class="string">flex</span>;',
+        '  <span class="variable">justify-content</span>: <span class="string">center</span>;',
+        '  <span class="variable">align-items</span>: <span class="string">center</span>;',
+        '  <span class="variable">background</span>: <span class="function">linear-gradient</span><span class="bracket">(</span><span class="number">135deg</span>, <span class="string">#667eea</span>, <span class="string">#764ba2</span><span class="bracket">)</span>;',
+        '  <span class="variable">border-radius</span>: <span class="number">10px</span>;',
+        '  <span class="variable">box-shadow</span>: <span class="number">0</span> <span class="number">4px</span> <span class="number">15px</span> <span class="function">rgba</span><span class="bracket">(</span><span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.2</span><span class="bracket">)</span>;',
+        '<span class="bracket">}</span>',
+        
+        // Comments
+        '<span class="comment">// This is a React functional component</span>',
+        '<span class="comment">/* Multi-line comment explaining</span>',
+        '<span class="comment">   the complex logic here */</span>',
+        '<span class="comment">// TODO: Implement error handling</span>',
+        '<span class="comment">// FIXME: Optimize performance</span>'
+    ];
+    
+    // Create code lines
+    for (let i = 0; i < 25; i++) {
+        const codeLine = document.createElement('div');
+        codeLine.className = 'code-line';
+        codeLine.innerHTML = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+        
+        // Random positioning
+        codeLine.style.top = Math.random() * 100 + '%';
+        codeLine.style.left = '-100%';
+        codeLine.style.animationDelay = Math.random() * 20 + 's';
+        
+        codeBackground.appendChild(codeLine);
+    }
+}
+
+// Matrix Binary Rain
+function createMatrixRain() {
+    const matrixBg = document.getElementById('matrixBackground');
+    if (!matrixBg) return;
+    
+    const binaryChars = '01';
+    const columns = Math.floor(window.innerWidth / 20);
+    
+    for (let i = 0; i < columns; i++) {
+        const column = document.createElement('div');
+        column.className = 'matrix-column';
+        
+        // Generate random binary string
+        let binaryString = '';
+        for (let j = 0; j < 50; j++) {
+            binaryString += binaryChars[Math.floor(Math.random() * binaryChars.length)] + '\n';
+        }
+        
+        column.textContent = binaryString;
+        column.style.left = (i * 20) + 'px';
+        column.style.animationDelay = Math.random() * 10 + 's';
+        
+        matrixBg.appendChild(column);
+    }
+}
+
+// Terminal Cursor Movement
+function animateTerminalCursor() {
+    const cursor = document.getElementById('terminalCursor');
+    if (!cursor) return;
+    
+    function moveCursor() {
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 100);
+        
+        cursor.style.left = x + 'px';
+        cursor.style.top = y + 'px';
+        
+        setTimeout(moveCursor, 3000 + Math.random() * 2000);
+    }
+    
+    moveCursor();
+}
+
 // Initialize dynamic effects
 document.addEventListener('DOMContentLoaded', () => {
     createDynamicParticles();
     setTimeout(setupParticleInteraction, 1000);
     handleProfileImageError();
+    
+    // Initialize programming background
+    setTimeout(() => {
+        createCodeBackground();
+        createMatrixRain();
+        animateTerminalCursor();
+    }, 1000);
 }); 
