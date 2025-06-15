@@ -66,11 +66,16 @@
         <div class="star"></div>
     </div>
 
-    <!-- Language Switcher -->
+    <!-- Circular Language Menu -->
     <div class="language-switcher">
-        <button class="lang-btn active" data-lang="fa">🇮🇷</button>
-        <button class="lang-btn" data-lang="en">🇺🇸</button>
-        <button class="lang-btn" data-lang="ar">🇸🇦</button>
+        <button class="lang-menu-toggle">
+            <span class="menu-icon">🌐</span>
+        </button>
+        <div class="lang-menu">
+            <button class="lang-btn active" data-lang="fa">🇮🇷</button>
+            <button class="lang-btn" data-lang="en">🇺🇸</button>
+            <button class="lang-btn" data-lang="ar">🇸🇦</button>
+        </div>
     </div>
 
     <!-- Theme Switcher -->
@@ -375,9 +380,8 @@
                         <textarea id="message" name="message" required></textarea>
                         <label for="message" data-key="contact.form.message">پیام شما</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="submit-btn">
                         <span data-key="contact.form.send">ارسال پیام</span>
-                        <div class="btn-glow"></div>
                     </button>
                 </form>
             </div>

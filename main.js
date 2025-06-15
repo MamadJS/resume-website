@@ -212,10 +212,30 @@ function setupCustomCursor() {
     });
 }
 
-// Language Switcher
+// Circular Language Menu
 function setupLanguageSwitcher() {
+    const menuToggle = document.querySelector('.lang-menu-toggle');
+    const langMenu = document.querySelector('.lang-menu');
     const langButtons = document.querySelectorAll('.lang-btn');
+    let isMenuOpen = false;
     
+    // Toggle menu
+    menuToggle.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        menuToggle.classList.toggle('active', isMenuOpen);
+        langMenu.classList.toggle('active', isMenuOpen);
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.language-switcher') && isMenuOpen) {
+            isMenuOpen = false;
+            menuToggle.classList.remove('active');
+            langMenu.classList.remove('active');
+        }
+    });
+    
+    // Language selection
     langButtons.forEach(button => {
         button.addEventListener('click', () => {
             const lang = button.getAttribute('data-lang');
@@ -224,11 +244,22 @@ function setupLanguageSwitcher() {
             // Update active button
             langButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
+            
+            // Close menu after selection
+            isMenuOpen = false;
+            menuToggle.classList.remove('active');
+            langMenu.classList.remove('active');
+            
+            // Add selection animation
+            button.style.transform = 'scale(1.3)';
+            setTimeout(() => {
+                button.style.transform = '';
+            }, 300);
         });
     });
 }
 
-// Theme Switcher
+// Enhanced Theme Switcher
 function setupThemeSwitcher() {
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.querySelector('.theme-icon');
@@ -242,16 +273,47 @@ function setupThemeSwitcher() {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
+        // Add switching animation class
+        themeToggle.classList.add('switching');
         
-        // Add animation effect
-        themeToggle.style.transform = 'scale(0.8) rotate(180deg)';
+        // Change theme after animation starts
         setTimeout(() => {
-            themeToggle.style.transform = 'scale(1) rotate(0deg)';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
         }, 200);
+        
+        // Remove animation class after completion
+        setTimeout(() => {
+            themeToggle.classList.remove('switching');
+        }, 800);
+        
+        // Create ripple effect
+        createRippleEffect(themeToggle);
     });
+}
+
+// Create ripple effect for theme button
+function createRippleEffect(button) {
+    const ripple = document.createElement('div');
+    ripple.style.position = 'absolute';
+    ripple.style.borderRadius = '50%';
+    ripple.style.background = 'rgba(0, 255, 255, 0.6)';
+    ripple.style.transform = 'scale(0)';
+    ripple.style.animation = 'ripple 0.6s linear';
+    ripple.style.left = '50%';
+    ripple.style.top = '50%';
+    ripple.style.width = '100px';
+    ripple.style.height = '100px';
+    ripple.style.marginLeft = '-50px';
+    ripple.style.marginTop = '-50px';
+    ripple.style.pointerEvents = 'none';
+    
+    button.appendChild(ripple);
+    
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
 }
 
 function updateThemeIcon(theme) {
