@@ -639,7 +639,39 @@ body::before {
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     padding: 4px;
-    animation: rotate 10s linear infinite;
+    animation: float 6s ease-in-out infinite;
+    overflow: hidden;
+}
+
+.avatar-circle::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        rgba(0, 255, 255, 0.4),
+        transparent,
+        rgba(139, 92, 246, 0.4),
+        transparent
+    );
+    animation: avatarRotate 8s linear infinite;
+    z-index: 0;
+}
+
+.avatar-circle::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background: var(--bg-primary);
+    border-radius: 50%;
+    z-index: 1;
 }
 
 .avatar-inner {
@@ -666,11 +698,23 @@ body::before {
     top: 0;
     left: 0;
     z-index: 2;
-    transition: all var(--transition-fast);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(1) contrast(1.1) saturate(1.2);
+    box-shadow: 
+        0 0 0 3px rgba(0, 255, 255, 0.3),
+        0 0 20px rgba(0, 255, 255, 0.2),
+        inset 0 0 20px rgba(139, 92, 246, 0.1);
 }
 
 .profile-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.08) translateY(-5px);
+    filter: brightness(1.2) contrast(1.3) saturate(1.4) hue-rotate(10deg);
+    box-shadow: 
+        0 0 0 5px rgba(0, 255, 255, 0.6),
+        0 0 40px rgba(0, 255, 255, 0.4),
+        0 0 80px rgba(139, 92, 246, 0.3),
+        inset 0 0 30px rgba(139, 92, 246, 0.2);
+    animation: profilePulse 2s ease-in-out infinite;
 }
 
 .avatar-text {
@@ -680,12 +724,23 @@ body::before {
     transition: opacity var(--transition-fast);
 }
 
+.avatar-circle:hover {
+    transform: scale(1.05);
+    animation: float 6s ease-in-out infinite, profileGlow 3s ease-in-out infinite;
+}
+
+.avatar-circle:hover::before {
+    animation: avatarRotate 2s linear infinite;
+}
+
 .avatar-inner:hover .profile-image {
     opacity: 0;
+    transform: scale(0.8) rotate(10deg);
 }
 
 .avatar-inner:hover .avatar-text {
     opacity: 1;
+    animation: profileMorph 4s ease-in-out infinite;
 }
 
 .hero-name {
@@ -1534,6 +1589,56 @@ body::before {
     50% {
         opacity: 1;
         transform: scale(1.2);
+    }
+}
+
+@keyframes profilePulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 0 5px rgba(0, 255, 255, 0.6),
+            0 0 40px rgba(0, 255, 255, 0.4),
+            0 0 80px rgba(139, 92, 246, 0.3),
+            inset 0 0 30px rgba(139, 92, 246, 0.2);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 8px rgba(0, 255, 255, 0.8),
+            0 0 60px rgba(0, 255, 255, 0.6),
+            0 0 120px rgba(139, 92, 246, 0.5),
+            inset 0 0 40px rgba(139, 92, 246, 0.3);
+    }
+}
+
+@keyframes profileMorph {
+    0%, 100% {
+        border-radius: 50%;
+    }
+    25% {
+        border-radius: 60% 40% 60% 40%;
+    }
+    50% {
+        border-radius: 40% 60% 40% 60%;
+    }
+    75% {
+        border-radius: 50% 50% 30% 70%;
+    }
+}
+
+@keyframes avatarRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes profileGlow {
+    0%, 100% {
+        filter: brightness(1) contrast(1.1) saturate(1.2);
+    }
+    50% {
+        filter: brightness(1.3) contrast(1.4) saturate(1.5) hue-rotate(15deg);
     }
 }
 
