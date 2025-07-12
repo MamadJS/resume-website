@@ -85,7 +85,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
-<body>
+<body class="bg-dark-bg text-gray-300 font-sans leading-normal tracking-wider">
 
     <div id="preloader">
         <div class="preloader-content">
@@ -271,7 +271,7 @@
                         <span class="block bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink bg-clip-text text-transparent animate-pulse" data-key="name">محمد حسن هاشمی</span>
                     </h1>
                     
-                    <h2 class="text-2xl md:text-4xl font-semibold text-cyber-green font-code">
+                    <h2 class="text-2xl md:text-4xl font-semibold text-cyber-green font-code h-12">
                         <span class="typing-text border-r-2 border-cyber-green animate-pulse" data-key="title"></span>
                     </h2>
                     
@@ -413,7 +413,7 @@
                         </div>
                         
                         <!-- Dynamic Skills Grid -->
-                        <div class="skills-grid-v2 mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div id="skills-grid" class="skills-grid-v2 mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
                             <!-- Skills will be dynamically loaded here by JavaScript -->
                         </div>
                         
@@ -445,156 +445,23 @@
                     <p class="text-gray-400 mt-4 max-w-2xl mx-auto">نمونه‌ای از پروژه‌های موفق که با تکنولوژی‌های مدرن توسعه داده‌ام</p>
                 </div>
                 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
-                    <div class="group animate-on-scroll">
-                        <div class="relative h-full bg-gradient-to-br from-dark-card/80 to-gray-900/80 rounded-3xl border border-cyber-blue/20 overflow-hidden backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-cyber-blue/40 hover:shadow-2xl hover:shadow-cyber-blue/20">
-                            <!-- Project Image Placeholder -->
-                            <div class="relative h-48 bg-gradient-to-br from-blue-500/20 to-purple-600/20 overflow-hidden">
-                                <div class="absolute inset-0 bg-code-gradient opacity-50"></div>
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="text-6xl opacity-30">🛒</div>
-                                </div>
-                                <!-- Hover Overlay -->
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </div>
-                            
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-white mb-3 font-vazir group-hover:text-cyber-blue transition-colors" data-key="projects.p1.title">پلتفرم تجارت الکترونیک</h3>
-                                <p class="text-gray-400 mb-4 leading-relaxed" data-key="projects.p1.desc">یک پلتفرم کامل با React و NestJS.</p>
-                                
-                                <!-- Tech Stack -->
-                                <div class="flex flex-wrap gap-2 mb-6">
-                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-full text-xs font-medium">React</span>
-                                    <span class="px-3 py-1 bg-red-500/20 text-red-400 border border-red-500/30 rounded-full text-xs font-medium">NestJS</span>
-                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 border border-green-500/30 rounded-full text-xs font-medium">MongoDB</span>
-                                </div>
-                                
-                                <!-- Action Buttons -->
-                                <div class="flex gap-3">
-                                    <a href="#" target="_blank" rel="noopener noreferrer" 
-                                       class="flex-1 px-4 py-2 bg-gradient-to-r from-cyber-blue to-cyber-purple text-white text-center rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyber-blue/30"
-                                       data-key="projects.live">
-                                        <span class="flex items-center justify-center gap-2">
-                                            <span>مشاهده دمو</span>
-                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
-                                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                    <a href="#" target="_blank" rel="noopener noreferrer"
-                                       class="px-4 py-2 border border-cyber-green text-cyber-green rounded-lg font-medium transition-all duration-300 hover:bg-cyber-green hover:text-dark-bg hover:scale-105"
-                                       data-key="projects.code">
-                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="group animate-on-scroll">
-                        <div class="relative h-full bg-gradient-to-br from-dark-card/80 to-gray-900/80 rounded-3xl border border-cyber-green/20 overflow-hidden backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-cyber-green/40 hover:shadow-2xl hover:shadow-cyber-green/20">
-                            <!-- Project Image Placeholder -->
-                            <div class="relative h-48 bg-gradient-to-br from-green-500/20 to-blue-600/20 overflow-hidden">
-                                <div class="absolute inset-0 bg-code-gradient opacity-50"></div>
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="text-6xl opacity-30">📊</div>
-                                </div>
-                                <!-- Hover Overlay -->
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </div>
-                            
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-white mb-3 font-vazir group-hover:text-cyber-green transition-colors" data-key="projects.p2.title">داشبورد آنالیتیکس</h3>
-                                <p class="text-gray-400 mb-4 leading-relaxed" data-key="projects.p2.desc">داشبورد مدیریت با Vue 3 و Nuxt.js.</p>
-                                
-                                <!-- Tech Stack -->
-                                <div class="flex flex-wrap gap-2 mb-6">
-                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 border border-green-500/30 rounded-full text-xs font-medium">Vue.js</span>
-                                    <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-full text-xs font-medium">Nuxt.js</span>
-                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-full text-xs font-medium">Chart.js</span>
-                                </div>
-                                
-                                <!-- Action Buttons -->
-                                <div class="flex gap-3">
-                                    <a href="#" target="_blank" rel="noopener noreferrer" 
-                                       class="flex-1 px-4 py-2 bg-gradient-to-r from-cyber-green to-cyber-blue text-white text-center rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyber-green/30"
-                                       data-key="projects.live">
-                                        <span class="flex items-center justify-center gap-2">
-                                            <span>مشاهده دمو</span>
-                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
-                                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                    <a href="#" target="_blank" rel="noopener noreferrer"
-                                       class="px-4 py-2 border border-cyber-purple text-cyber-purple rounded-lg font-medium transition-all duration-300 hover:bg-cyber-purple hover:text-white hover:scale-105"
-                                       data-key="projects.code">
-                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="group animate-on-scroll">
-                        <div class="relative h-full bg-gradient-to-br from-dark-card/80 to-gray-900/80 rounded-3xl border border-cyber-pink/20 overflow-hidden backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-cyber-pink/40 hover:shadow-2xl hover:shadow-cyber-pink/20">
-                            <!-- Project Image Placeholder -->
-                            <div class="relative h-48 bg-gradient-to-br from-pink-500/20 to-orange-600/20 overflow-hidden">
-                                <div class="absolute inset-0 bg-code-gradient opacity-50"></div>
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="text-6xl opacity-30">🔧</div>
-                                </div>
-                                <!-- Hover Overlay -->
-                                <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </div>
-                            
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-white mb-3 font-vazir group-hover:text-cyber-pink transition-colors" data-key="projects.p3.title">API میکروسرویس</h3>
-                                <p class="text-gray-400 mb-4 leading-relaxed" data-key="projects.p3.desc">معماری میکروسرویس با Node.js و Docker.</p>
-                                
-                                <!-- Tech Stack -->
-                                <div class="flex flex-wrap gap-2 mb-6">
-                                    <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 rounded-full text-xs font-medium">Node.js</span>
-                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-full text-xs font-medium">Docker</span>
-                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-400 border border-purple-500/30 rounded-full text-xs font-medium">Redis</span>
-                                </div>
-                                
-                                <!-- Action Buttons -->
-                                <div class="flex gap-3">
-                                    <a href="#" target="_blank" rel="noopener noreferrer" 
-                                       class="flex-1 px-4 py-2 bg-gradient-to-r from-cyber-pink to-cyber-orange text-white text-center rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyber-pink/30"
-                                       data-key="projects.live">
-                                        <span class="flex items-center justify-center gap-2">
-                                            <span>مشاهده دمو</span>
-                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
-                                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                    <a href="#" target="_blank" rel="noopener noreferrer"
-                                       class="px-4 py-2 border border-cyber-orange text-cyber-orange rounded-lg font-medium transition-all duration-300 hover:bg-cyber-orange hover:text-dark-bg hover:scale-105"
-                                       data-key="projects.code">
-                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Projects will be dynamically loaded here -->
                 </div>
             </div>
         </section>
+
+        <!-- Modal for project details -->
+        <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+            <div id="modal-content" class="bg-dark-card border border-cyber-blue/50 rounded-2xl p-8 max-w-2xl w-full transform scale-95 transition-transform duration-300">
+                <button id="close-modal" class="absolute top-4 right-4 text-white hover:text-cyber-pink">&times;</button>
+                <h3 id="modal-title" class="text-2xl font-bold text-cyber-blue mb-4"></h3>
+                <img id="modal-image" src="" alt="Project Image" class="w-full h-48 object-cover rounded-lg mb-4">
+                <p id="modal-description" class="text-gray-300 mb-4"></p>
+                <div id="modal-tech-stack" class="flex flex-wrap gap-2 mb-4"></div>
+                <a id="modal-link" href="#" target="_blank" class="text-cyber-green hover:underline">مشاهده پروژه</a>
+            </div>
+        </div>
 
         <section id="experience" class="relative py-20 bg-gradient-to-b from-dark-card to-dark-bg overflow-hidden">
             <!-- Background Effects -->
